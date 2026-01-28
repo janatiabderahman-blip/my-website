@@ -3,20 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقع عبدالرحمن</title>
+    <title>عبدالرحمن - مطور واجهات</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .card { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; max-width: 400px; }
-        h1 { color: #1877f2; margin-bottom: 10px; }
-        p { color: #4b4b4b; line-height: 1.6; }
-        .success-badge { background: #e7f3ff; color: #1877f2; padding: 5px 15px; border-radius: 20px; font-weight: bold; display: inline-block; margin-bottom: 20px; }
+        :root { --primary: #2563eb; --secondary: #3b82f6; --text: #1f2937; }
+        body { font-family: 'Cairo', sans-serif; background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%); display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; color: var(--text); }
+        .container { background: white; padding: 40px; border-radius: 24px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); text-align: center; width: 90%; max-width: 450px; border: 1px solid rgba(255,255,255,0.1); }
+        .profile-img { width: 100px; height: 100px; background: var(--primary); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 40px; font-weight: bold; }
+        h1 { font-size: 24px; margin: 10px 0; color: #111827; }
+        p { font-size: 16px; color: #4b5563; margin-bottom: 25px; }
+        .btn { display: block; background: var(--primary); color: white; padding: 12px; border-radius: 12px; text-decoration: none; font-weight: bold; transition: 0.3s; margin-bottom: 10px; }
+        .btn:hover { background: var(--secondary); transform: translateY(-2px); }
+        .btn-alt { background: #10b981; }
     </style>
 </head>
 <body>
-    <div class="card">
-        <div class="success-badge">تم الإطلاق بنجاح ✅</div>
-        <h1>أهلاً بك في موقعي</h1>
-        <p>أنا عبدالرحمن، وهذا أول مشروع لي يتم رفعه وبرمجته بالكامل عبر الهاتف باستخدام Termux و GitHub.</p>
+    <div class="container">
+        <div class="profile-img">ع</div>
+        <h1>عبدالرحمن</h1>
+        <p>متخصص في برمجة وتطوير مواقع الويب عبر الهاتف الذكي. هل تريد موقعاً مثل هذا لمشروعك؟</p>
+        <a href="https://wa.me/YOUR_NUMBER" class="btn btn-alt">اطلب موقعك الآن (واتساب)</a>
+        <a href="#" class="btn">شاهد معرض أعمالي</a>
     </div>
 </body>
 </html>
