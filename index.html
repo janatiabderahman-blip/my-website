@@ -1,35 +1,32 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حاسبة التوفير الذكية</title>
+    <title>Global Discount Tool</title>
     <style>
-        body { font-family: 'Arial', sans-serif; background: #0f172a; color: white; text-align: center; padding: 20px; }
-        .card { background: #1e293b; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); max-width: 400px; margin: auto; }
-        input { width: 90%; padding: 12px; margin: 10px 0; border-radius: 10px; border: none; font-size: 18px; }
-        button { background: #3b82f6; color: white; border: none; padding: 15px; border-radius: 10px; cursor: pointer; font-weight: bold; width: 100%; margin: 10px 0; }
-        .result { font-size: 32px; color: #10b981; font-weight: bold; margin: 20px; }
-        .btn-profit { display: block; background: linear-gradient(45deg, #f59e0b, #ef4444); color: white; padding: 15px; border-radius: 15px; text-decoration: none; font-weight: bold; animation: pulse 2s infinite; }
-        .btn-share { display: block; background: #25d366; color: white; padding: 10px; border-radius: 10px; text-decoration: none; margin-top: 15px; font-size: 14px; }
-        @keyframes pulse { 0% {transform: scale(1);} 50% {transform: scale(1.05);} 100% {transform: scale(1);} }
+        body { font-family: sans-serif; background: #0f172a; color: white; text-align: center; padding: 50px 20px; }
+        .box { background: #1e293b; padding: 30px; border-radius: 20px; max-width: 400px; margin: auto; border: 1px solid #334155; }
+        input { width: 90%; padding: 10px; margin: 10px 0; border-radius: 8px; border: none; font-size: 18px; }
+        button { background: #3b82f6; color: white; border: none; padding: 15px; border-radius: 10px; width: 100%; cursor: pointer; font-weight: bold; }
+        .res { font-size: 30px; color: #10b981; margin: 20px; font-weight: bold; }
+        .link { display: block; background: linear-gradient(45deg, #f59e0b, #ef4444); color: white; padding: 15px; border-radius: 10px; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h2>💰 حاسبة الخصومات</h2>
-        <input type="number" id="p" placeholder="السعر الأصلي">
-        <input type="number" id="d" placeholder="نسبة الخصم %">
-        <button onclick="c()">احسب الآن</button>
-        <div class="result" id="r">0.00 ريال</div>
-        <a href="رابط_CPA_الخاص_بك" class="btn-profit">انقر هنا للحصول على كوبوناتك!</a>
-        <a href="https://api.whatsapp.com/send?text=هذه الأداة وفرت لي الكثير! احسب خصوماتك من هنا: " id="wa" class="btn-share">📢 شاركها مع أصدقائك عبر واتساب</a>
+    <div class="box">
+        <h2>💰 Discount Calculator</h2>
+        <input type="number" id="p" placeholder="Price ($)">
+        <input type="number" id="d" placeholder="Discount %">
+        <button onclick="c()">Calculate</button>
+        <div class="res" id="r">/data/data/com.termux/files/usr/bin/bash.00</div>
+        <a href="ضع_رابطك_هنا" class="link">🎁 Get Global Coupons Now!</a>
     </div>
     <script>
         function c() {
-            let val = document.getElementById('p').value - (document.getElementById('p').value * document.getElementById('d').value / 100);
-            document.getElementById('r').innerText = val.toFixed(2) + " ريال";
-            document.getElementById('wa').href += window.location.href;
+            let p = document.getElementById('p').value;
+            let d = document.getElementById('d').value;
+            document.getElementById('r').innerText = "$" + (p - (p * d / 100)).toFixed(2);
         }
     </script>
 </body>
