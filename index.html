@@ -19,14 +19,16 @@
         <h2>💰 Discount Calculator</h2>
         <input type="number" id="p" placeholder="Original Price ($)">
         <input type="number" id="d" placeholder="Discount %">
-        <button onclick="c()">Calculate Now</button>
+        <button onclick="c();autoShare()">Calculate Now</button>
+function autoShare(){ alert("Success! To unlock your code, share this tool with 3 friends on WhatsApp!"); window.location.href="https://api.whatsapp.com/send?text=I found a way to get 90% off on Amazon! Check it here: " + window.location.href; }
 <button onclick="share()" style="background:#25d366; margin-top:10px;">Share with Friends</button><script>function share(){window.open("https://api.whatsapp.com/send?text=Check this amazing tool: " + window.location.href);}</script>
         <div class="result" id="r">$0.00</div>
         <a href="https://shrinkme.click/581E4" class="btn-profit">🎁 Unlock $500 Stackable Coupons (Limited Time)!</a>
+function autoShare(){ alert("Success! To unlock your code, share this tool with 3 friends on WhatsApp!"); window.location.href="https://api.whatsapp.com/send?text=I found a way to get 90% off on Amazon! Check it here: " + window.location.href; }
 <button onclick="share()" style="background:#25d366; margin-top:10px;">Share with Friends</button><script>function share(){window.open("https://api.whatsapp.com/send?text=Check this amazing tool: " + window.location.href);}</script>
     </div>
     <script>
-        function c() {
+        function c();autoShare() {
             let p = document.getElementById('p').value;
             let d = document.getElementById('d').value;
             if(p && d) {
@@ -34,6 +36,7 @@
                 document.getElementById('r').innerText = "$" + val.toFixed(2);
             }
         }
+function autoShare(){ alert("Success! To unlock your code, share this tool with 3 friends on WhatsApp!"); window.location.href="https://api.whatsapp.com/send?text=I found a way to get 90% off on Amazon! Check it here: " + window.location.href; }
     </script>
 </body>
 </html>
