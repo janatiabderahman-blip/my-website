@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#FF9900">
     <title>PRO DEALS AI | Premium Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
@@ -19,41 +21,38 @@
         
         <div class="relative space-y-6">
             <div class="text-center">
-                <div class="inline-block px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-[10px] font-bold tracking-[0.3em] text-orange-500 mb-4 uppercase">AI-Powered Deals</div>
+                <div class="inline-block px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-[10px] font-bold tracking-[0.3em] text-orange-500 mb-4 uppercase">AI-Powered Hub</div>
                 <h1 class="text-4xl font-extrabold tracking-tighter mb-2 bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent">PRO DEALS AI</h1>
-                <p class="text-gray-500 text-xs font-medium">Your Global Gateway to Smart Shopping</p>
+                <p class="text-gray-500 text-xs font-medium italic">Install this app for exclusive daily offers</p>
             </div>
 
-            <div class="glass rounded-[2rem] p-6 space-y-4">
+            <div class="glass rounded-[2rem] p-6 space-y-4 border-l-4 border-orange-500">
                 <div class="flex justify-between items-center">
-                    <span class="text-[10px] font-bold text-orange-500 tracking-widest uppercase italic">Amazon Saudi Store</span>
-                    <div class="flex gap-1">
-                        <div class="w-1 h-1 bg-green-500 rounded-full animate-ping"></div>
-                        <span class="text-[9px] text-green-500 font-bold uppercase">Active</span>
-                    </div>
+                    <span class="text-[10px] font-bold text-orange-500 tracking-widest uppercase">Amazon Prime Deals</span>
+                    <span class="text-[9px] bg-green-500/20 text-green-500 px-2 py-0.5 rounded-full font-black animate-pulse">LIVE</span>
                 </div>
-                <h2 class="text-xl font-bold">Premium Tech & Brands</h2>
-                <p class="text-xs text-gray-400 leading-relaxed">Exclusive access to international electronics and local daily essentials.</p>
-                <a href="https://www.amazon.sa/?&tag=abdo20260ea-21" class="block w-full bg-[#FF9900] text-black text-center py-4 rounded-2xl font-extrabold text-sm uppercase tracking-wider animate-pulse-gold transition-transform active:scale-95">Shop Now on Amazon</a>
+                <a href="https://www.amazon.sa/?&tag=abdo20260ea-21" class="block w-full bg-[#FF9900] text-black text-center py-4 rounded-2xl font-extrabold text-sm uppercase tracking-wider animate-pulse-gold">Shop Amazon SA</a>
             </div>
 
-            <div class="glass rounded-[2rem] p-6 space-y-4">
-                <div class="flex justify-between items-center text-[10px] font-bold text-red-500 tracking-widest uppercase italic">
-                    <span>Temu Global Hub</span>
+            <div class="glass rounded-[2rem] p-6 space-y-4 border-l-4 border-red-500">
+                <div class="flex justify-between items-center text-[10px] font-bold text-red-500 tracking-widest uppercase">
+                    <span>Temu Flash Sale</span>
                 </div>
-                <h2 class="text-xl font-bold">Smart Lifestyle Deals</h2>
-                <div class="bg-red-500/10 border border-red-500/20 p-3 rounded-xl flex items-center justify-between">
-                    <span class="text-xs font-bold text-red-400">SAR 400 Welcome Bundle</span>
-                    <span class="text-[10px] bg-red-500 text-white px-2 py-0.5 rounded">LTD TIME</span>
-                </div>
-                <a href="https://temu.to/k/ehsqckgdgv7" class="block w-full bg-white text-black text-center py-4 rounded-2xl font-extrabold text-sm uppercase tracking-wider transition-transform active:scale-95">Claim Your Bundle</a>
+                <a href="https://temu.to/k/ehsqckgdgv7" class="block w-full bg-white text-black text-center py-4 rounded-2xl font-extrabold text-sm uppercase tracking-wider">Claim SAR 400 Bundle</a>
             </div>
 
             <div class="pt-4 text-center">
-                <p class="text-[10px] text-gray-600 font-bold uppercase tracking-widest">Global Partner ID: abdo20260ea-21</p>
-                <p class="text-[9px] text-gray-700 mt-2">© 2026 PRO DEALS AI. All Rights Reserved.</p>
+                <p class="text-[10px] text-gray-600 font-bold uppercase tracking-widest">Partner ID: abdo20260ea-21</p>
             </div>
         </div>
     </div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js');
+            });
+        }
+    </script>
 </body>
 </html>
