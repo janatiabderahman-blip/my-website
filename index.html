@@ -3,46 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Smart Discount Tool</title>
+    <title>Global Smart Shopping AI</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background-color: #0f172a; color: white; font-family: sans-serif; }
-        .card { background-color: #1e293b; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        .progress-bar { transition: width 0.5s ease; }
+        .hidden-content { display: none; }
     </style>
 </head>
-<body class="flex flex-col items-center justify-center min-h-screen p-4">
-    <div class="card w-full max-w-md text-center">
-        <h2 class="text-red-500 font-bold mb-4 animate-pulse">🔥 Only 7 Coupon Slots Left for Today!</h2>
-        <h1 class="text-2xl font-bold mb-6">💰 Discount Calculator</h1>
-        
-        <input type="number" id="price" placeholder="Enter Total Price" class="w-full p-3 mb-4 rounded bg-white text-black text-center">
-        <input type="number" id="discount" placeholder="Discount %" class="w-full p-3 mb-6 rounded bg-white text-black text-center">
-        
-        <button onclick="calculate()" class="w-full bg-blue-600 hover:bg-blue-700 p-3 rounded-lg font-bold mb-4">Calculate Now</button>
-        
-        <div id="result" class="text-3xl font-bold text-green-400 mb-6">$0.00</div>
+<body class="bg-black text-white flex items-center justify-center min-h-screen p-4">
+    <div class="max-w-md w-full bg-zinc-900 border border-zinc-800 p-8 rounded-3xl text-center shadow-2xl">
+        <h1 class="text-2xl font-black mb-4 text-blue-500">AI SHOPPING ASSISTANT</h1>
+        <p class="text-zinc-400 text-sm mb-6">Analyze markets & find potential stackable coupons.</p>
 
-        <button onclick="autoShare()" class="w-full bg-green-500 hover:bg-green-600 p-3 rounded-lg font-bold mb-4 flex items-center justify-center gap-2">
-            Share with Friends
-        </button>
+        <div id="mission">
+            <div class="bg-blue-600/10 border border-blue-600/30 p-4 rounded-xl mb-6">
+                <p class="text-xs text-blue-400">COMMUNITY CHALLENGE: Help 5 friends discover AI savings to unlock the "Premium Deals" link.</p>
+            </div>
+            
+            <div class="w-full bg-zinc-800 h-3 rounded-full mb-2 overflow-hidden">
+                <div id="bar" class="progress-bar bg-blue-600 h-full" style="width: 10%"></div>
+            </div>
+            <p id="status" class="text-[10px] text-zinc-500 mb-8 font-mono uppercase">Task: Share to verify community engagement</p>
 
-        <a href="https://shrinkme.click/581E4" class="block w-full bg-orange-500 hover:bg-orange-600 p-4 rounded-lg font-bold text-white shadow-lg transform hover:scale-105 transition">
-            🎁 Unlock $500 Stackable Coupons (Limited Time)!
-        </a>
+            <button onclick="legalSpread()" class="w-full bg-white text-black font-bold py-4 rounded-xl hover:bg-blue-500 hover:text-white transition-all transform active:scale-95">
+                SHARE & CONTINUE ➔
+            </button>
+        </div>
+
+        <div id="profit" class="hidden-content">
+            <p class="text-green-500 font-bold mb-4">★ TASK COMPLETED ★</p>
+            <a href="https://shrinkme.click/581E4" class="block w-full bg-blue-600 text-white font-black py-5 rounded-xl animate-pulse">
+                ACCESS GLOBAL DEALS
+            </a>
+        </div>
+
+        <p class="mt-8 text-[9px] text-zinc-600 leading-tight text-justify">
+            Disclaimer: This is a community-driven tool. We do not guarantee specific savings. By using this tool, you agree to our terms. This site is not affiliated with Amazon Inc.
+        </p>
     </div>
 
     <script>
-        function calculate() {
-            let p = document.getElementById('price').value;
-            let d = document.getElementById('discount').value;
-            if(p && d) {
-                let final = p - (p * d / 100);
-                document.getElementById('result').innerText = "$" + final.toFixed(2);
+        let clicks = 1;
+        function legalSpread() {
+            const url = "https://janatiabderahman-blip.github.io/my-website/";
+            const msg = "Check this AI tool for smart shopping: ";
+            window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(msg + url));
+            
+            clicks++;
+            let p = (clicks / 5) * 100;
+            document.getElementById('bar').style.width = p + "%";
+            if(clicks >= 5) {
+                document.getElementById('mission').classList.add('hidden-content');
+                document.getElementById('profit').classList.remove('hidden-content');
             }
-        }
-        function autoShare() {
-            alert("Success! To unlock your code, share this tool with 3 friends on WhatsApp!");
-            window.location.href = "https://api.whatsapp.com/send?text=I found a way to get 90% off on Amazon! Check it here: " + window.location.href;
         }
     </script>
 </body>
