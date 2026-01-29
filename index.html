@@ -3,80 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRO DEALS AI - Global Profit Node</title>
+    <title>PRO DEALS AI - Global Node</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" id="cpljs-9f6f0f22-fd1b-11f0-bf76-4e5c1971bddc" src="https://bestlocker.eu/iframeLoader/9f6f0f22-fd1b-11f0-bf76-4e5c1971bddc"></script>
     <style>
         .gradient-text { background: linear-gradient(135deg, #60a5fa, #34d399, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .main-card { box-shadow: 0 0 50px rgba(59, 130, 246, 0.15); border: 1px solid rgba(255,255,255,0.05); }
-        .loading-bar { width: 0%; height: 2px; background: #3b82f6; transition: width 0.5s; }
+        .main-card { box-shadow: 0 0 50px rgba(59, 130, 246, 0.2); border: 1px solid rgba(255,255,255,0.1); }
     </style>
 </head>
 <body class="bg-[#020617] text-white font-sans overflow-x-hidden">
-
-    <div id="notif" class="fixed top-5 right-5 left-5 md:left-auto md:w-80 bg-white text-slate-900 p-4 rounded-2xl shadow-2xl z-50 hidden border-l-4 border-blue-600 transform transition-all duration-500">
-        <p id="notif-msg" class="text-[10px] font-black uppercase tracking-tighter"></p>
-    </div>
-
     <div class="min-h-screen flex flex-col items-center justify-center p-6 text-center">
-        
-        <div class="mb-6 relative">
-            <div class="w-20 h-20 border-2 border-blue-500/30 rounded-full flex items-center justify-center animate-spin-slow">
-                <span class="text-3xl">💎</span>
-            </div>
-            <div class="absolute -bottom-1 -right-1 bg-emerald-500 w-4 h-4 rounded-full border-2 border-[#020617]"></div>
-        </div>
-
-        <div class="max-w-md w-full bg-[#0f172a]/95 main-card rounded-[3rem] p-10 relative overflow-hidden backdrop-blur-2xl">
-            <div id="progress" class="absolute top-0 left-0 loading-bar"></div>
-
-            <h1 class="text-4xl font-black mb-2 tracking-tighter uppercase italic">
-                PRO <span class="gradient-text text-5xl">DEALS</span> AI
-            </h1>
-            <p class="text-slate-500 text-[9px] font-bold uppercase tracking-[0.5em] mb-8">Premium Global Node Active</p>
-
+        <div class="max-w-md w-full bg-[#0f172a]/95 main-card rounded-[3rem] p-10 backdrop-blur-2xl">
+            <h1 class="text-4xl font-black mb-2 italic">PRO <span class="gradient-text text-5xl">DEALS</span> AI</h1>
+            <p class="text-slate-500 text-[10px] font-bold uppercase tracking-[0.5em] mb-8">Premium Global Search Node</p>
+            
             <div class="space-y-6">
-                <div class="bg-black/40 p-5 rounded-3xl border border-white/5">
-                    <p id="status-text" class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">
-                        System Status: <span class="text-emerald-400">Ready for Global Search</span>
-                    </p>
-                </div>
-
-                <button onclick="activateGlobalLock()" class="w-full bg-white text-black font-black py-7 rounded-[2rem] text-xl shadow-2xl hover:bg-blue-50 active:scale-95 transition-all uppercase italic tracking-tighter">
+                <button onclick="call_locker();" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-black py-6 rounded-[2rem] text-xl shadow-2xl transition-all uppercase italic">
                     Unlock Global Search ➔
                 </button>
             </div>
-
-            <div class="mt-10 pt-6 border-t border-slate-800/50">
-                <p class="text-[8px] text-slate-600 uppercase font-black">Verified Secure by MyLead Global Network</p>
-            </div>
+            
+            <div id="cpa-locker-9f6f0f22-fd1b-11f0-bf76-4e5c1971bddc"></div>
+            
+            <p class="mt-8 text-[8px] text-slate-600 uppercase font-black">Secure verification by MyLead Global</p>
         </div>
     </div>
-
-    <script>
-        const alerts = [
-            "Khaled (KSA) earned $45.20 today!",
-            "John (USA) unlocked a $100 Voucher!",
-            "Yassine (MOR) just received a PayPal payment!",
-            "System: AI Node detected High-Value Leads in Europe!"
-        ];
-
-        setInterval(() => {
-            const n = document.getElementById('notif');
-            document.getElementById('notif-msg').innerText = alerts[Math.floor(Math.random()*alerts.length)];
-            n.classList.remove('hidden');
-            setTimeout(() => n.classList.add('hidden'), 4000);
-        }, 7000);
-
-        function activateGlobalLock() {
-            document.getElementById('status-text').innerHTML = "Status: <span class='text-blue-400 animate-pulse'>Verifying Human Status...</span>";
-            document.getElementById('progress').style.width = "100%";
-            
-            // هنا سنضع رابط الـ Content Locker الخاص بك من MyLead
-            setTimeout(() => {
-                alert("Redirecting to Secure Verification... Complete one offer to unlock global deals.");
-                window.location.href = "https://janatiabderahman-blip.github.io/my-website/"; // سيتم استبداله برابط MyLead
-            }, 2000);
-        }
-    </script>
 </body>
 </html>
