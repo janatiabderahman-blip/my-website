@@ -1,37 +1,57 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRO DEALS AI | عروض السعودية والعالم</title>
+    <title>PRO DEALS AI | Global Premium Offers</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
-    <style>body { font-family: 'Cairo', sans-serif; }</style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #050505; }
+        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .neon-border-amazon { border-bottom: 3px solid #FF9900; box-shadow: 0 10px 20px -10px rgba(255, 153, 0, 0.3); }
+        .neon-border-temu { border-bottom: 3px solid #FF5722; box-shadow: 0 10px 20px -10px rgba(255, 87, 34, 0.3); }
+    </style>
 </head>
-<body class="bg-[#0b0f1a] text-white flex items-center justify-center min-h-screen p-4">
-    <div class="max-w-md w-full bg-[#161b2b] rounded-[3rem] p-10 text-center border border-white/5 shadow-2xl">
-        <h1 class="text-4xl font-black mb-2 tracking-tighter italic text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">PRO DEALS AI</h1>
-        <p class="text-[10px] text-gray-400 mb-10 font-bold uppercase tracking-[0.2em]">Smart Shopping Assistant</p>
+<body class="text-white min-h-screen flex items-center justify-center p-6">
+    <div class="max-w-md w-full space-y-8">
+        
+        <div class="text-center space-y-2">
+            <h1 class="text-5xl font-black tracking-tighter italic bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent">PRO DEALS AI</h1>
+            <p class="text-[10px] tracking-[0.4em] text-gray-500 font-bold uppercase">Global Affiliate Hub</p>
+        </div>
 
-        <div class="group bg-gradient-to-br from-[#232f3e] to-[#131921] p-1 rounded-3xl mb-6 transition-transform hover:scale-105">
-            <div class="bg-[#1a222d] p-6 rounded-[1.4rem]">
-                <h2 class="text-xl font-bold text-yellow-500 mb-1">أمازون السعودية</h2>
-                <p class="text-xs text-gray-400 mb-6">تسوق أحدث الإلكترونيات والماركات العالمية</p>
-                <a href="https://www.amazon.sa/?&tag=abdo20260ea-21" class="block bg-yellow-500 text-black py-3 rounded-xl font-black text-sm uppercase">دخول المتجر الآن</a>
+        <div class="glass-card rounded-[2.5rem] p-8 neon-border-amazon transition-all hover:scale-[1.02]">
+            <div class="flex justify-between items-start mb-6">
+                <div>
+                    <h2 class="text-2xl font-black text-[#FF9900]">AMAZON</h2>
+                    <p class="text-xs text-gray-400">Premium Brands & Electronics</p>
+                </div>
+                <span class="bg-[#FF9900]/10 text-[#FF9900] text-[8px] px-2 py-1 rounded-full font-bold">UP TO 60% OFF</span>
+            </div>
+            <a href="https://www.amazon.sa/?&tag=abdo20260ea-21" class="block w-full bg-[#FF9900] text-black text-center py-4 rounded-2xl font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all">Shop Saudi Store</a>
+        </div>
+
+        <div class="glass-card rounded-[2.5rem] p-8 neon-border-temu transition-all hover:scale-[1.02]">
+            <div class="flex justify-between items-start mb-6">
+                <div>
+                    <h2 class="text-2xl font-black text-[#FF5722]">TEMU</h2>
+                    <p class="text-xs text-gray-400">Worldwide Shipping & Coupons</p>
+                </div>
+                <span class="bg-[#FF5722]/10 text-[#FF5722] text-[8px] px-2 py-1 rounded-full font-bold">SAR 400 BUNDLE</span>
+            </div>
+            <a href="https://temu.to/k/ehsqckgdgv7" class="block w-full bg-[#FF5722] text-white text-center py-4 rounded-2xl font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all">Claim Global Deals</a>
+        </div>
+
+        <div class="text-center pt-4">
+            <p class="text-[9px] text-gray-600 font-medium">Verified Partner ID: abdo20260ea-21</p>
+            <div class="mt-4 flex justify-center gap-4">
+                <div class="w-1 h-1 bg-gray-800 rounded-full"></div>
+                <div class="w-1 h-1 bg-gray-800 rounded-full"></div>
+                <div class="w-1 h-1 bg-gray-800 rounded-full"></div>
             </div>
         </div>
 
-        <div class="group bg-gradient-to-br from-orange-600 to-red-500 p-1 rounded-3xl mb-10 transition-transform hover:scale-105">
-            <div class="bg-[#1a222d] p-6 rounded-[1.4rem]">
-                <h2 class="text-xl font-bold text-white mb-1">عروض تيمو (TEMU)</h2>
-                <p class="text-xs text-orange-200/60 mb-6">احصل على خصومات وحزمة 400 ريال</p>
-                <a href="https://temu.to/k/ehsqckgdgv7" class="block bg-white text-orange-600 py-3 rounded-xl font-black text-sm uppercase">اغتنم الفرصة</a>
-            </div>
-        </div>
-
-        <div class="flex flex-col items-center gap-2">
-            <span class="px-3 py-1 bg-white/5 rounded-full text-[9px] text-gray-500 font-bold tracking-widest">ID: abdo20260ea-21</span>
-        </div>
     </div>
 </body>
 </html>
