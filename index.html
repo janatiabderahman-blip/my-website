@@ -3,63 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Shopping AI Assistant</title>
+    <title>AI Smart Shopping Engine</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <meta name="description" content="Global AI shopping assistant for smart discounts.">
+    <meta name="keywords" content="Amazon, AI, Shopping, Deals, Coupons, Smart Savings">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="canonical" href="https://janatiabderahman-blip.github.io/my-website/">
 </head>
-<body class="bg-gray-50 text-slate-900 font-sans flex items-center justify-center min-h-screen p-4">
-    <div class="max-w-md w-full bg-white p-8 rounded-[2rem] shadow-xl text-center border border-gray-100">
-        <div class="mb-6">
-            <div class="inline-block p-3 bg-green-50 rounded-2xl mb-4">
-                <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
-            </div>
-            <h1 class="text-2xl font-bold">Smart Shopping AI</h1>
-            <p class="text-slate-500 text-sm mt-2">Find the best legitimate deals & discount tips globally.</p>
+<body class="bg-slate-50 text-slate-900 font-sans flex items-center justify-center min-h-screen p-4">
+    <div class="max-w-md w-full bg-white p-10 rounded-[3rem] shadow-2xl text-center border border-slate-100 relative overflow-hidden">
+        
+        <div class="absolute -top-10 -right-10 w-32 h-32 bg-blue-50 rounded-full blur-3xl"></div>
+
+        <div class="mb-10">
+            <h1 class="text-3xl font-black text-slate-900 tracking-tight">AI ENGINE 2.0</h1>
+            <p class="text-blue-600 font-bold text-xs uppercase tracking-[0.2em] mt-2">Verified Global Node</p>
         </div>
 
-        <div id="action-area" class="space-y-6">
-            <div class="bg-blue-50 p-5 rounded-2xl border border-blue-100">
-                <p class="text-sm text-blue-700 font-medium">To access our AI-curated list of verified discount links, please share this tool with 5 friends who love shopping!</p>
-            </div>
-            
-            <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
-                <div id="bar" class="bg-blue-600 h-full transition-all duration-500" style="width: 10%"></div>
+        <div id="content-lock" class="space-y-8">
+            <div class="p-6 bg-slate-50 rounded-[2rem] border border-slate-100 shadow-inner">
+                <p class="text-sm text-slate-600 leading-relaxed font-semibold">
+                    "Shopping smarter, not harder! 🛒 This AI tool helps find the best stackable discounts on Amazon."
+                </p>
             </div>
 
-            <button onclick="shareLegal()" class="w-full bg-slate-900 hover:bg-black text-white font-bold py-4 rounded-xl transition-all transform active:scale-95 shadow-lg">
-                Share to Unlock Links ➔
+            <div class="space-y-3">
+                <p class="text-[10px] text-slate-400 font-bold uppercase">System Validation Progress</p>
+                <div class="w-full bg-slate-100 h-3 rounded-full overflow-hidden p-0.5 border border-slate-200">
+                    <div id="bar" class="bg-blue-600 h-full rounded-full transition-all duration-1000 shadow-[0_0_10px_rgba(37,99,235,0.5)]" style="width: 20%"></div>
+                </div>
+            </div>
+
+            <button onclick="activateAutoSpread()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-black py-6 rounded-2xl shadow-2xl shadow-blue-100 transition-all transform active:scale-95 text-lg">
+                SHARE TO ACTIVATE ➔
             </button>
         </div>
 
-        <div id="reward-area" class="hidden">
-            <div class="p-4 bg-green-50 rounded-xl mb-6">
-                <p class="text-green-700 font-bold text-sm">✅ Verified Deals Unlocked</p>
-            </div>
-            <a href="https://shrinkme.click/581E4" class="block w-full bg-blue-600 text-white font-bold py-5 rounded-xl shadow-lg">
-                VIEW GLOBAL DEALS NOW
+        <div id="reward-link" class="hidden">
+            <p class="text-green-500 font-black mb-6">✓ ACCESS GRANTED</p>
+            <a href="https://shrinkme.click/581E4" class="block w-full bg-slate-900 text-white font-extrabold py-6 rounded-2xl shadow-2xl">
+                CLAIM YOUR SMART DEALS
             </a>
         </div>
 
-        <div class="mt-8 pt-6 border-t border-gray-100">
-            <p class="text-[10px] text-gray-400 leading-relaxed uppercase tracking-tighter">
-                Disclaimer: We provide marketing links and shopping tips. Not affiliated with any specific brand. 100% Legal & Community Driven.
-            </p>
-        </div>
+        <p class="mt-10 text-[8px] text-slate-400 font-bold tracking-widest uppercase">
+            © 2026 AI Marketing Lab | Legal & Global Entity
+        </p>
     </div>
 
     <script>
-        let count = 1;
-        function shareLegal() {
-            const url = "https://janatiabderahman-blip.github.io/my-website/";
-            const msg = "Check out this AI tool for finding the best shopping deals: ";
-            window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(msg + url));
+        let clicks = 1;
+        function activateAutoSpread() {
+            const link = "https://janatiabderahman-blip.github.io/my-website/";
+            const text = "Shopping smarter, not harder! 🛒 This AI tool helps me find and calculate the best stackable discounts on Amazon. Total game changer! 🔥 Get it here: ";
             
-            count++;
-            let progress = (count / 5) * 100;
-            document.getElementById('bar').style.width = progress + "%";
+            // فتح نافذة المشاركة (النشر الفيروسي)
+            window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(text + link));
             
-            if(count >= 5) {
-                document.getElementById('action-area').classList.add('hidden');
-                document.getElementById('reward-area').classList.remove('hidden');
+            clicks++;
+            let progress = (clicks / 5) * 100;
+            document.getElementById('bar').style.width = (progress > 100 ? 100 : progress) + "%";
+            
+            if(clicks >= 5) {
+                document.getElementById('content-lock').classList.add('hidden');
+                document.getElementById('reward-link').classList.remove('hidden');
             }
         }
     </script>
