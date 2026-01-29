@@ -4,105 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="manifest" href="manifest.json">
-    <title>PRO DEALS AI | Global Deals Megatron</title>
+    <title>PRO DEALS AI | Instant Profit Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
-        :root { --neon-orange: #ff9900; --neon-gold: #ffcc00; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #020205; color: white; overflow-x: hidden; -webkit-user-select: none; user-select: none; }
-        
-        /* خلفية النجوم المتحركة */
-        .stars-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: radial-gradient(circle at 50% 50%, #101020 0%, #020205 100%); }
-        
-        /* تأثير الزجاج المتوهج */
-        .ultra-glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(25px); border: 1px solid rgba(255, 153, 0, 0.15); box-shadow: 0 15px 35px rgba(0,0,0,0.5); transition: 0.5s; }
-        .ultra-glass:hover { border-color: var(--neon-orange); transform: translateY(-5px); box-shadow: 0 0 30px rgba(255, 153, 0, 0.2); }
-        
-        /* زر الميجا نيون */
-        .mega-button { background: linear-gradient(45deg, var(--neon-orange), var(--neon-gold)); color: black; font-weight: 900; transition: 0.3s; position: relative; overflow: hidden; }
-        .mega-button:active { transform: scale(0.95); }
-        .mega-button::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: rgba(255,255,255,0.2); transform: rotate(45deg); transition: 0.5s; }
-        .mega-button:hover::after { left: 120%; }
-
-        @keyframes pulse-glow { 0% { box-shadow: 0 0 5px var(--neon-orange); } 50% { box-shadow: 0 0 25px var(--neon-orange); } 100% { box-shadow: 0 0 5px var(--neon-orange); } }
-        .animate-glow { animation: pulse-glow 2s infinite; }
+        :root { --neon-orange: #ff9900; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #020205; color: white; -webkit-user-select: none; user-select: none; }
+        .ultra-glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(25px); border: 1px solid rgba(255, 153, 0, 0.15); transition: 0.5s; }
+        .hot-tag { background: linear-gradient(90deg, #ff4d4d, #f9cb28); animation: shimmer 2s infinite; }
+        @keyframes shimmer { 0% { opacity: 0.8; } 50% { opacity: 1; } 100% { opacity: 0.8; } }
+        .mega-button { background: linear-gradient(45deg, #ff9900, #ffcc00); color: black; font-weight: 900; }
     </style>
 </head>
-<body oncontextmenu="return false;">
-    <div class="stars-bg"></div>
-    
-    <div class="max-w-md mx-auto px-6 py-12 relative z-10 space-y-12">
-        
-        <div class="text-center space-y-6">
-            <div class="relative inline-block">
-                <div class="w-24 h-24 bg-gradient-to-tr from-[#ff9900] to-[#ffcc00] rounded-[2rem] flex items-center justify-center animate-glow mx-auto">
-                    <span class="text-5xl font-black text-black tracking-tighter">PD</span>
-                </div>
-            </div>
-            <div class="space-y-2">
-                <h1 class="text-5xl font-black tracking-tighter italic">PRO DEALS <span class="text-[#ff9900]">AI</span></h1>
-                <p class="text-[11px] font-bold text-gray-400 uppercase tracking-[0.4em]">Global Deals Megatron</p>
-            </div>
-            <div class="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-white/5 border border-white/10">
-                <span class="w-2 h-2 bg-orange-500 rounded-full animate-ping"></span>
-                <p id="timer" class="text-xs font-black font-mono text-orange-400">MEGA OFFERS END IN: 59:59</p>
-            </div>
+<body>
+    <div class="hot-tag w-full py-2 text-center text-[10px] font-black text-black uppercase tracking-[0.2em]">
+        🔥 Trending Now: iPhone 16 Pro Max Deals & Temu SAR 400 Coupons! 🔥
+    </div>
+
+    <div class="max-w-md mx-auto px-6 py-8 space-y-8">
+        <div class="text-center space-y-2">
+            <h1 class="text-4xl font-black italic tracking-tighter text-white">PRO DEALS <span class="text-[#ff9900]">AI</span></h1>
+            <p class="text-[9px] text-gray-500 font-bold uppercase tracking-[0.3em]">Direct Affiliate Profit Engine</p>
         </div>
 
-        <div class="ultra-glass rounded-[3rem] p-8 space-y-6 relative group">
+        <div class="ultra-glass rounded-[2.5rem] p-6 space-y-4 border-2 border-orange-500/30">
             <div class="flex justify-between items-center">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" class="h-7 brightness-200" alt="Amazon">
-                <span class="text-[10px] font-black text-white bg-orange-600 px-3 py-1 rounded-lg uppercase">Limited Time</span>
+                <span class="text-[10px] font-black text-orange-500 uppercase tracking-widest">Amazon Fast-Cash Link</span>
+                <span class="text-[9px] bg-green-500/20 text-green-500 px-2 py-0.5 rounded-full animate-pulse">98% Success</span>
             </div>
-            <div>
-                <h2 class="text-2xl font-extrabold text-white">Amazon Saudi Arabia</h2>
-                <p class="text-sm text-gray-400 mt-2">Massive discounts on Electronics, Fashion & more. AI-Powered picks.</p>
-            </div>
-            <a href="https://www.amazon.sa/?tag=abdo20260ea-21" class="mega-button block w-full text-center py-5 rounded-2xl uppercase tracking-widest text-sm">Unlock Mega Deals</a>
+            <h2 class="text-xl font-black">Daily Best Sellers SA</h2>
+            <p class="text-xs text-gray-400 leading-relaxed">Most clicked products in Saudi Arabia right now. High conversion rates.</p>
+            <a href="https://www.amazon.sa/gp/bestsellers/?tag=abdo20260ea-21" class="mega-button block w-full text-center py-4 rounded-2xl uppercase text-sm">Shop Trending Items</a>
         </div>
 
-        <div class="ultra-glass rounded-[3rem] p-8 space-y-6 border-l-4 border-l-red-500">
-            <div class="flex justify-between items-center">
-                <h2 class="text-3xl font-black italic tracking-tighter">TEMU</h2>
-                <span class="text-[10px] font-black text-white bg-red-600 px-3 py-1 rounded-lg uppercase">Coupon Code</span>
+        <div class="ultra-glass rounded-[2.5rem] p-6 space-y-4">
+            <div class="flex justify-between items-center text-[10px] font-black text-red-500 uppercase">
+                <span>Temu High-Conversion Gift</span>
             </div>
-            <div class="relative bg-gradient-to-r from-red-600/20 to-transparent p-5 rounded-2xl border border-red-500/20">
-                <p class="text-[10px] font-black uppercase text-red-400 mb-1 tracking-widest italic">Exclusive For You</p>
-                <p class="text-2xl font-black text-white">SAR 400 <span class="text-red-500 underline">FREE</span> BUNDLE</p>
+            <div class="bg-red-500/10 border border-red-500/20 p-4 rounded-2xl">
+                <p class="text-[9px] text-red-500 font-black mb-1">CASH BACK BUNDLE</p>
+                <p class="text-lg font-black italic">Claim Your SAR 400 Today</p>
             </div>
-            <a href="https://temu.to/k/ehsqckgdgv7" class="mega-button block w-full text-center py-5 rounded-2xl uppercase tracking-widest text-sm shadow-xl shadow-red-900/20">Claim My Mega Deals</a>
+            <a href="https://temu.to/k/ehsqckgdgv7" class="block w-full bg-white text-black text-center py-4 rounded-2xl font-black text-sm uppercase">Claim & Shop</a>
         </div>
 
-        <div class="text-center space-y-8 opacity-60">
-            <div class="flex justify-center items-center gap-10 grayscale brightness-150">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" class="h-4">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png" class="h-6">
-            </div>
-            <div class="flex justify-center gap-4">
-                <button onclick="togglePrivacy()" class="text-[9px] font-black uppercase tracking-[0.2em] text-gray-500 hover:text-white">Privacy & Legal</button>
-            </div>
+        <div class="text-center opacity-40">
+            <p class="text-[8px] font-black tracking-widest uppercase">Network ID: abdo20260ea-21</p>
+            <button onclick="togglePrivacy()" class="text-[8px] underline mt-2 uppercase">Legal Terms</button>
         </div>
     </div>
 
     <div id="privacyModal" class="fixed inset-0 bg-black/98 z-50 flex items-center justify-center p-6 hidden">
-        <div class="ultra-glass max-w-sm w-full p-10 rounded-[3rem] text-center">
-            <h3 class="text-2xl font-black text-orange-500 mb-6 uppercase">Legal Disclosure</h3>
-            <p class="text-xs text-gray-400 leading-relaxed italic mb-8">As an Amazon Associate, PRO DEALS AI earns from qualifying purchases. This platform is AI-Verified and secured by global encryption protocols.</p>
-            <button onclick="togglePrivacy()" class="block w-full bg-white text-black py-4 rounded-2xl font-black text-xs uppercase tracking-widest">Close</button>
+        <div class="ultra-glass max-w-sm w-full p-8 rounded-[2rem] text-center">
+            <p class="text-[10px] text-gray-400 italic">As an Amazon Associate, PRO DEALS AI earns from qualifying purchases.</p>
+            <button onclick="togglePrivacy()" class="mt-6 block w-full bg-white text-black py-3 rounded-xl font-black text-xs uppercase">Close</button>
         </div>
     </div>
 
-    <script>
-        function togglePrivacy() { document.getElementById('privacyModal').classList.toggle('hidden'); }
-        function startTimer(d, display) {
-            var t = d, m, s;
-            setInterval(function () {
-                m = parseInt(t / 60, 10); s = parseInt(t % 60, 10);
-                display.textContent = "MEGA OFFERS END IN: " + (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
-                if (--t < 0) t = d;
-            }, 1000);
-        }
-        window.onload = function () { startTimer(3599, document.querySelector('#timer')); };
-    </script>
+    <script>function togglePrivacy() { document.getElementById('privacyModal').classList.toggle('hidden'); }</script>
 </body>
 </html>
