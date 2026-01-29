@@ -3,40 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Amazon Promo Codes 2026, Free Coupons, Discount Calculator, Save Money Online"><title>AI-Powered Smart Discount Tool</title>
+    <title>AI Smart Discount Tool</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background: #0f172a; color: white; text-align: center; padding: 20px; }
-        .card { background: #1e293b; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); max-width: 400px; margin: auto; border: 1px solid #334155; }
-        input { width: 90%; padding: 12px; margin: 10px 0; border-radius: 10px; border: none; font-size: 18px; outline: none; }
-        button { background: #3b82f6; color: white; border: none; padding: 15px; border-radius: 10px; cursor: pointer; font-weight: bold; width: 100%; margin: 10px 0; font-size: 18px; }
-        .result { font-size: 32px; color: #10b981; font-weight: bold; margin: 20px; }
-        .btn-profit { display: block; background: linear-gradient(45deg, #f59e0b, #ef4444); color: white; padding: 15px; border-radius: 15px; text-decoration: none; font-weight: bold; font-size: 18px; }
+        body { background-color: #0f172a; color: white; font-family: sans-serif; }
+        .card { background-color: #1e293b; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
     </style>
 </head>
-<body>
-    <div class="card">
-<div style="color:#ef4444; font-weight:bold; margin-bottom:10px;">🔥 Only 7 Coupon Slots Left for Today!</div>
-        <h2>💰 Discount Calculator</h2>
-        <input type="number" id="p" placeholder="Original Price ($)">
-        <input type="number" id="d" placeholder="Discount %">
-        <button onclick="c();autoShare()">Calculate Now</button>
-function autoShare(){ alert("Success! To unlock your code, share this tool with 3 friends on WhatsApp!"); window.location.href="https://api.whatsapp.com/send?text=I found a way to get 90% off on Amazon! Check it here: " + window.location.href; }
-<button onclick="share()" style="background:#25d366; margin-top:10px;">Share with Friends</button><script>function share(){window.open("https://api.whatsapp.com/send?text=Check this amazing tool: " + window.location.href);}</script>
-        <div class="result" id="r">$0.00</div>
-        <a href="https://shrinkme.click/581E4" class="btn-profit">🎁 Unlock $500 Stackable Coupons (Limited Time)!</a>
-function autoShare(){ alert("Success! To unlock your code, share this tool with 3 friends on WhatsApp!"); window.location.href="https://api.whatsapp.com/send?text=I found a way to get 90% off on Amazon! Check it here: " + window.location.href; }
-<button onclick="share()" style="background:#25d366; margin-top:10px;">Share with Friends</button><script>function share(){window.open("https://api.whatsapp.com/send?text=Check this amazing tool: " + window.location.href);}</script>
+<body class="flex flex-col items-center justify-center min-h-screen p-4">
+    <div class="card w-full max-w-md text-center">
+        <h2 class="text-red-500 font-bold mb-4 animate-pulse">🔥 Only 7 Coupon Slots Left for Today!</h2>
+        <h1 class="text-2xl font-bold mb-6">💰 Discount Calculator</h1>
+        
+        <input type="number" id="price" placeholder="Enter Total Price" class="w-full p-3 mb-4 rounded bg-white text-black text-center">
+        <input type="number" id="discount" placeholder="Discount %" class="w-full p-3 mb-6 rounded bg-white text-black text-center">
+        
+        <button onclick="calculate()" class="w-full bg-blue-600 hover:bg-blue-700 p-3 rounded-lg font-bold mb-4">Calculate Now</button>
+        
+        <div id="result" class="text-3xl font-bold text-green-400 mb-6">$0.00</div>
+
+        <button onclick="autoShare()" class="w-full bg-green-500 hover:bg-green-600 p-3 rounded-lg font-bold mb-4 flex items-center justify-center gap-2">
+            Share with Friends
+        </button>
+
+        <a href="https://shrinkme.click/581E4" class="block w-full bg-orange-500 hover:bg-orange-600 p-4 rounded-lg font-bold text-white shadow-lg transform hover:scale-105 transition">
+            🎁 Unlock $500 Stackable Coupons (Limited Time)!
+        </a>
     </div>
+
     <script>
-        function c();autoShare() {
-            let p = document.getElementById('p').value;
-            let d = document.getElementById('d').value;
+        function calculate() {
+            let p = document.getElementById('price').value;
+            let d = document.getElementById('discount').value;
             if(p && d) {
-                let val = p - (p * d / 100);
-                document.getElementById('r').innerText = "$" + val.toFixed(2);
+                let final = p - (p * d / 100);
+                document.getElementById('result').innerText = "$" + final.toFixed(2);
             }
         }
-function autoShare(){ alert("Success! To unlock your code, share this tool with 3 friends on WhatsApp!"); window.location.href="https://api.whatsapp.com/send?text=I found a way to get 90% off on Amazon! Check it here: " + window.location.href; }
+        function autoShare() {
+            alert("Success! To unlock your code, share this tool with 3 friends on WhatsApp!");
+            window.location.href = "https://api.whatsapp.com/send?text=I found a way to get 90% off on Amazon! Check it here: " + window.location.href;
+        }
     </script>
 </body>
 </html>
