@@ -3,50 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRO DEALS AI - Global Savings</title>
+    <title>PRO DEALS AI - Official Global Node</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .gradient-text { background: linear-gradient(90deg, #3b82f6, #10b981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .bg-gold-glow { box-shadow: 0 0 40px rgba(59, 130, 246, 0.15); }
+        .gradient-text { background: linear-gradient(135deg, #60a5fa, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .logo-box { border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); }
+        @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 20px rgba(59,130,246,0.2); } 50% { box-shadow: 0 0 40px rgba(59,130,246,0.4); } }
+        .main-card { animation: pulse-glow 4s infinite; }
     </style>
 </head>
-<body class="bg-[#020617] text-white font-sans">
+<body class="bg-[#020617] text-white font-sans overflow-x-hidden">
 
-    <div id="notif" class="fixed top-5 right-5 left-5 md:left-auto md:w-80 bg-white text-slate-900 p-4 rounded-2xl shadow-2xl z-50 hidden border-l-4 border-emerald-500 transform transition-all duration-500">
-        <p id="notif-msg" class="text-[10px] font-black uppercase tracking-tighter"></p>
+    <div id="notif" class="fixed top-5 right-5 left-5 md:left-auto md:w-80 bg-white text-slate-900 p-4 rounded-2xl shadow-2xl z-50 hidden border-l-4 border-blue-600 transform transition-all duration-500">
+        <div class="flex items-center gap-3">
+            <div class="w-2 h-2 bg-blue-600 rounded-full animate-ping"></div>
+            <p id="notif-msg" class="text-[10px] font-black uppercase tracking-tighter"></p>
+        </div>
     </div>
 
-    <div class="min-h-screen flex items-center justify-center p-6">
-        <div class="max-w-md w-full bg-[#0f172a] rounded-[3rem] p-10 border border-slate-800 text-center relative overflow-hidden bg-gold-glow">
+    <div class="min-h-screen flex flex-col items-center justify-center p-6">
+        
+        <div class="mb-8 flex flex-col items-center animate-fadeIn">
+            <div class="w-16 h-16 bg-gradient-to-br from-blue-600 to-emerald-500 rounded-2xl flex items-center justify-center shadow-2xl mb-3 rotate-3 logo-box">
+                <span class="text-2xl font-black text-white italic">P</span>
+            </div>
+            <div class="text-center">
+                <h2 class="text-xs font-black tracking-[0.5em] text-blue-400 uppercase">Pro Deals</h2>
+                <div class="h-[1px] w-full bg-gradient-to-r from-transparent via-blue-500 to-transparent mt-1"></div>
+            </div>
+        </div>
+
+        <div class="max-w-md w-full bg-[#0f172a]/80 main-card rounded-[3rem] p-10 border border-white/5 text-center relative overflow-hidden backdrop-blur-xl">
             
-            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-emerald-400 to-blue-600"></div>
+            <div class="absolute top-4 right-8 italic text-[10px] font-black text-blue-500 animate-pulse uppercase">Live Node 2.9</div>
 
-            <h1 class="text-4xl font-black mb-2 tracking-tighter uppercase italic">PRO <span class="gradient-text text-5xl italic">DEALS</span> AI</h1>
-            <p class="text-slate-500 text-[10px] font-bold uppercase tracking-[0.4em] mb-10">Secured Smart Shopping Engine</p>
+            <h1 class="text-4xl font-black mb-6 tracking-tighter uppercase italic">
+                <span class="text-white">PRO</span> <span class="gradient-text text-5xl">DEALS</span> <span class="text-slate-500">AI</span>
+            </h1>
 
-            <div id="main-action" class="space-y-6">
-                <div class="bg-slate-900/80 p-6 rounded-[2rem] border border-slate-800">
-                    <p class="text-xs text-slate-400 leading-relaxed">AI Node active in <span class="text-white font-bold">KSA, UAE, MAR & IND</span>. Searching for high-value liquidation deals...</p>
+            <div class="space-y-6">
+                <div class="bg-black/40 p-6 rounded-[2rem] border border-white/5">
+                    <p class="text-[11px] text-slate-400 leading-relaxed uppercase font-bold tracking-widest">
+                        Scanning Global Market Errors in:<br>
+                        <span class="text-emerald-400">KSA • UAE • MOR • IND</span>
+                    </p>
                 </div>
 
-                <button onclick="startGlobalViral()" class="w-full bg-blue-600 text-white font-black py-7 rounded-[2rem] text-xl shadow-xl hover:bg-blue-700 active:scale-95 transition-all uppercase">
-                    Launch AI Search ➔
+                <button onclick="startGlobalViral()" class="w-full bg-white text-black font-black py-7 rounded-[2rem] text-xl shadow-2xl hover:scale-105 active:scale-95 transition-all uppercase italic tracking-tighter">
+                    Access AI Engine ➔
                 </button>
             </div>
 
-            <div class="mt-10 pt-6 border-t border-slate-800 flex justify-between px-2">
-                <span class="text-[9px] font-bold text-slate-600 uppercase">Ver. 2026.1.29 • Global Node</span>
-                <button onclick="alert('PRO DEALS AI: Independent Legal Entity. All rights reserved.')" class="text-[9px] font-black text-blue-500 underline uppercase tracking-widest">Legal Info</button>
+            <div class="mt-12 flex flex-col gap-4">
+                <div class="flex justify-between items-center px-4">
+                    <span class="text-[8px] font-black text-slate-600 uppercase tracking-widest">Global Affiliate Node</span>
+                    <span class="text-[8px] font-black text-emerald-500 uppercase tracking-widest">Connection: Secure</span>
+                </div>
+                <div class="h-[1px] w-full bg-slate-800"></div>
+                <button onclick="alert('PRO DEALS AI: Global Savings Entity 2026.')" class="text-[9px] font-bold text-slate-500 hover:text-white transition-colors uppercase">Legal & Privacy Entity</button>
             </div>
         </div>
     </div>
 
     <script>
         const alerts = [
-            "Khaled from Riyadh found a 70% Coupon!",
-            "Deepak from Mumbai unlocked a Secret Deal!",
-            "Yassine from Morocco saved $120 today!",
-            "AI Agent: Best Prices Found in Dubai Store!"
+            "Khaled (Riyadh) saved 1,450 SAR!",
+            "Yassine (Casablanca) unlocked 85% Deal!",
+            "Deepak (Mumbai) found a Price Error!",
+            "AI Agent: 90% Discount found in Amazon UAE!"
         ];
 
         setInterval(() => {
@@ -54,16 +78,16 @@
             document.getElementById('notif-msg').innerText = alerts[Math.floor(Math.random()*alerts.length)];
             n.classList.remove('hidden');
             setTimeout(() => n.classList.add('hidden'), 4000);
-        }, 7000);
+        }, 8000);
 
         function startGlobalViral() {
             const link = "https://janatiabderahman-blip.github.io/my-website/";
-            const text = "Found an AI tool for massive discounts in Saudi, UAE & Morocco! 🛒 Check it: ";
+            const text = "Pro Deals AI is finding 90% errors in Saudi, UAE & Morocco stores! 🔥 Check now: ";
             window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(text + link));
             
             setTimeout(() => {
                 window.location.href = "https://shrinkme.click/581E4"; 
-            }, 2000);
+            }, 2500);
         }
     </script>
 </body>
