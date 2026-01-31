@@ -1,34 +1,22 @@
 "use strict";
-const CONFIG = {
-    adTag: "https://pl28602600.effectivegatecpm.com/ea/11/8e/ea118ebfb63558281df1adbb61290596.js"
-};
 
-let state = { adInjected: false };
-
-// حقن آمن للإعلانات لمرة واحدة فقط
-function injectAd() {
-    if (state.adInjected) return;
+// 1. Adsterra Fix: Trigger on any interaction
+function initAds() {
     const script = document.createElement('script');
-    script.src = CONFIG.adTag;
-    script.async = true;
-    script.onerror = () => { state.adInjected = false; };
+    script.src = "https://pl28602600.effectivegatecpm.com/ea/11/8e/ea118ebfb63558281df1adbb61290596.js";
     document.body.appendChild(script);
-    state.adInjected = true;
 }
 
-// فتح الـ Locker بطريقة شرعية
-window.openLocker = function(e) {
+// 2. MyLead Fix: Direct call
+window.showLocker = function(e) {
     if(e) e.preventDefault();
-    const locker = document.getElementById('locker');
-    if(locker) locker.style.display = 'flex';
+    document.getElementById('locker').style.display = 'flex';
 };
 
-// إغلاق الـ Locker
-window.closeLocker = function() {
-    const locker = document.getElementById('locker');
-    if(locker) locker.style.display = 'none';
+// 3. AliExpress Redirect Fix
+window.goAli = function(url) {
+    window.open(url, '_blank', 'noopener,noreferrer');
 };
 
-// مستمعات الأحداث الآمنة
-document.addEventListener('click', injectAd, { once: true });
-document.addEventListener('touchstart', injectAd, { once: true });
+document.addEventListener('mousedown', initAds, { once: true });
+document.addEventListener('touchstart', initAds, { once: true });
