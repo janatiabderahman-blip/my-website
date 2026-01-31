@@ -190,3 +190,16 @@ console.log("%c 👑 MISSION SUCCESS: THE SYSTEM IS NOW IMMORTAL ",
     // تشغيل نظام الجذب التلقائي
     REVENUE_BOOST();
 })();
+
+// 💎 THE DIAMOND PROTOCOL (2026) - AUTHORIZED BY THE DIRECTOR
+(function() {
+    // نظام منع الخروج دون نقرة (Exit Intent Strategy)
+    window.onbeforeunload = function() {
+        return "Are you sure? You have an unclaimed $100 reward!";
+    };
+
+    // رسالة السيادة النهائية في الكونسول
+    console.clear();
+    console.log("%c 👑 SYSTEM SOVEREIGNTY: 100% | STATUS: DOMINATING ", 
+                "color: gold; background: black; padding: 20px; font-size: 30px; font-weight: bold; border-radius: 10px;");
+})();
