@@ -1,17 +1,24 @@
-:root { --primary: #008060; --ali: #ff4747; --dark: #1a1a1a; --light: #f9f9f9; }
-* { margin:0; padding:0; box-sizing:border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-body { background: var(--light); color: var(--dark); line-height: 1.5; }
-.main-wrapper { max-width: 480px; margin: 0 auto; background: #fff; min-height: 100vh; position: relative; box-shadow: 0 0 40px rgba(0,0,0,0.1); }
-header { padding: 15px; text-align: center; border-bottom: 1px solid #eee; background: #fff; position: sticky; top: 0; z-index: 1000; }
-.logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); text-decoration: none; }
-.hero-sec { padding: 30px 20px; text-align: center; background: linear-gradient(to bottom, #f0fdf4, #fff); }
-.card { margin: 15px; border: 1px solid #eee; border-radius: 16px; overflow: hidden; background: #fff; }
-.img-box { width: 100%; height: 220px; background: #eee; }
-.img-box img { width: 100%; height: 100%; object-fit: cover; }
-.p-20 { padding: 20px; }
-.btn { display: block; width: 100%; padding: 16px; border-radius: 12px; font-weight: 700; text-decoration: none; text-align: center; border: none; cursor: pointer; margin-top: 10px; font-size: 1rem; transition: 0.3s; }
-.btn-ali { background: var(--ali); color: #fff; }
-.btn-locker { background: var(--dark); color: #fff; }
-#locker-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 9999; padding: 20px; overflow-y: auto; }
-.locker-content { background: #fff; padding: 30px; border-radius: 20px; margin-top: 50px; text-align: center; }
-.wa-btn { position: fixed; bottom: 20px; right: 20px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 999; }
+:root { --primary: #00b894; --secondary: #0984e3; --danger: #d63031; --dark: #2d3436; --light: #f9f9f9; --white: #ffffff; }
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body { background: var(--light); color: var(--dark); line-height: 1.6; }
+.container { max-width: 500px; margin: 0 auto; background: var(--white); min-height: 100vh; box-shadow: 0 0 50px rgba(0,0,0,0.05); }
+header { background: var(--white); padding: 20px; text-align: center; border-bottom: 2px solid var(--primary); position: sticky; top:0; z-index: 1000; }
+.logo { font-size: 1.8rem; font-weight: 900; color: var(--primary); text-decoration: none; letter-spacing: -1px; }
+.hero { padding: 40px 20px; text-align: center; background: linear-gradient(135deg, #f5fdfb 0%, #ffffff 100%); border-bottom: 1px solid #eee; }
+.badge { display: inline-block; padding: 5px 15px; background: rgba(0,184,148,0.1); color: var(--primary); border-radius: 50px; font-size: 12px; font-weight: bold; margin-bottom: 15px; }
+.grid { padding: 15px; display: grid; gap: 20px; }
+.deal-card { background: #fff; border: 1px solid #eee; border-radius: 15px; overflow: hidden; transition: 0.3s; }
+.deal-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+.deal-img { width: 100%; height: 200px; background: #f0f0f0; object-fit: cover; }
+.deal-content { padding: 15px; }
+.deal-price { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+.deal-old-price { text-decoration: line-through; color: #b2bec3; font-size: 0.9rem; margin-left: 10px; }
+.btn { display: block; width: 100%; padding: 15px; border-radius: 10px; font-weight: bold; text-decoration: none; text-align: center; border: none; cursor: pointer; font-size: 1.1rem; transition: 0.3s; }
+.btn-claim { background: var(--danger); color: #fff; box-shadow: 0 5px 15px rgba(214,48,49,0.3); }
+.btn-verify { background: var(--dark); color: #fff; }
+.how-it-works { padding: 30px 20px; background: #f1f2f6; border-radius: 15px; margin: 20px; }
+.step { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; font-size: 0.9rem; }
+.step-num { background: var(--primary); color: #fff; width: 25px; height: 25px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; }
+#locker-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 10001; justify-content: center; align-items: center; padding: 20px; }
+.modal-box { background: #fff; padding: 30px; border-radius: 20px; text-align: center; width: 100%; max-width: 400px; }
+.live-notif { position: fixed; bottom: 20px; left: 20px; background: #fff; padding: 10px 20px; border-radius: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: none; font-size: 12px; z-index: 999; border-left: 4px solid var(--primary); }
