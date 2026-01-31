@@ -89,3 +89,16 @@ setInterval(updateLiveStatus, 5000);
 
 // بروتوكول الأرشفة الفائقة (Ping Indexing)
 console.log("Sovereign Protocol: Status 100% - Autopilot Engaged");
+
+// نظام حماية وتحسين العائد (Revenue Optimizer)
+function optimizeRevenue() {
+    const isMobile = /iPhone|Android/i.test(navigator.userAgent);
+    if(isMobile) {
+        console.log("Mobile optimization active: Increasing CTA visibility");
+        document.querySelectorAll('.btn').forEach(b => b.style.padding = '22px');
+    }
+}
+optimizeRevenue();
+
+// نظام "البصمة الزمنية" لجذب عناكب البحث
+console.log("System Fingerprint: " + btoa(new Date().getTime()));
