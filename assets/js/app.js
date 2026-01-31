@@ -1,30 +1,23 @@
-"use strict";
-const CONFIG = {
-    ad: "https://pl28602600.effectivegatecpm.com/ea/11/8e/ea118ebfb63558281df1adbb61290596.js",
-    ali: [
-        "https://s.click.aliexpress.com/e/_c3OAbIL1",
-        "https://s.click.aliexpress.com/e/_c2IwzuZV",
-        "https://s.click.aliexpress.com/e/_c34H1lJN",
-        "https://s.click.aliexpress.com/e/_c3m4lztp"
-    ]
-};
-
-let adInjected = false;
-function loadAd() {
-    if(adInjected) return;
-    const s = document.createElement('script');
-    s.src = CONFIG.ad;
-    s.async = true;
-    document.body.appendChild(s);
-    adInjected = true;
+// 1. Adsterra (Monetization)
+let adLoaded = false;
+function triggerAds() {
+    if(!adLoaded) {
+        const s = document.createElement('script');
+        s.src = "https://pl28602600.effectivegatecpm.com/ea/11/8e/ea118ebfb63558281df1adbb61290596.js";
+        document.body.appendChild(s);
+        adLoaded = true;
+    }
 }
+window.addEventListener('click', triggerAds, {once:true});
 
-window.goAli = (i) => { window.open(CONFIG.ali[i], '_blank', 'noopener,noreferrer'); };
-window.openLocker = () => { document.getElementById('locker').style.display = 'flex'; };
-window.shareWA = () => {
-    const text = "Amazing 90% OFF deals found here! 🎁 " + window.location.href;
-    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
-};
+// 2. AliExpress Links (Direct Redirect)
+const aliLinks = [
+    "https://s.click.aliexpress.com/e/_c3OAbIL1",
+    "https://s.click.aliexpress.com/e/_c2IwzuZV",
+    "https://s.click.aliexpress.com/e/_c34H1lJN",
+    "https://s.click.aliexpress.com/e/_c3m4lztp"
+];
+window.goAli = (index) => { window.location.href = aliLinks[index]; };
 
-document.addEventListener('mousedown', loadAd, {once:true});
-document.addEventListener('touchstart', loadAd, {once:true});
+// 3. MyLead Locker
+window.openLocker = () => { document.getElementById('locker-overlay').style.display = 'flex'; };
