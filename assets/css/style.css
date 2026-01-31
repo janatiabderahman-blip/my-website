@@ -1,19 +1,14 @@
-:root { --gold: #d4af37; --black: #0f0f0f; --dark-grey: #1a1a1a; }
-body { background: var(--black); color: white; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; text-align: center; overflow-x: hidden; }
-header { padding: 40px 15px; background: linear-gradient(180deg, #1a1a1a 0%, #000 100%); border-bottom: 1px solid var(--gold); }
-.logo { font-size: 1.8em; color: var(--gold); font-weight: 800; letter-spacing: 1px; }
-header p { font-size: 0.9em; color: #ccc; margin-top: 10px; }
-.container { padding: 20px; }
-.grid { display: flex; flex-direction: column; gap: 15px; }
-.card { background: #151515; border: 1px solid #222; padding: 20px; border-radius: 12px; display: flex; flex-direction: column; align-items: center; }
-.card h3 { margin: 0; font-size: 1.2em; color: var(--gold); }
-.card p { font-size: 0.85em; color: #888; margin: 8px 0; }
-.btn-profit { width: 90%; background: var(--gold); color: black; padding: 14px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1em; text-align: center; transition: 0.2s; }
-.btn-profit:active { transform: scale(0.95); background: white; }
-footer { padding: 20px; font-size: 0.7em; color: #444; margin-top: 20px; }
-
-/* دعم الشاشات الكبيرة (Desktop) */
-@media (min-width: 768px) {
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .logo { font-size: 2.5em; }
-}
+:root { --gold: #D4AF37; --deep-black: #050505; --soft-dark: #121212; --text: #f0f0f0; }
+* { box-sizing: border-box; transition: all 0.3s ease; }
+body { background: var(--deep-black); color: var(--text); font-family: 'Inter', 'Segoe UI', sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+header { background: linear-gradient(135deg, #1a1a1a 0%, #000 100%); padding: 60px 20px; text-align: center; border-bottom: 3px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.logo { font-size: 3rem; font-weight: 900; color: var(--gold); letter-spacing: -1px; text-shadow: 0 0 15px rgba(212,175,55,0.3); }
+.container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+.card { background: var(--soft-dark); border: 1px solid #222; border-radius: 20px; padding: 30px; text-align: center; position: relative; overflow: hidden; }
+.card:hover { border-color: var(--gold); transform: translateY(-10px); box-shadow: 0 20px 40px rgba(212,175,55,0.1); }
+.card h3 { color: var(--gold); font-size: 1.5rem; margin-bottom: 15px; }
+.btn-profit { display: block; background: var(--gold); color: #000; padding: 15px; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 1.1rem; margin-top: 20px; }
+.btn-profit:hover { background: #fff; box-shadow: 0 0 20px var(--gold); }
+footer { text-align: center; padding: 40px; color: #555; font-size: 0.9rem; border-top: 1px solid #222; margin-top: 50px; }
+@media (max-width: 768px) { .logo { font-size: 2rem; } .grid { grid-template-columns: 1fr; } }
