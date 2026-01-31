@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Crawl-delay: 1
 Sitemap: https://janatiabderahman-blip.github.io/FixlyHub/sitemap.xml
