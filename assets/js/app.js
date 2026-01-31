@@ -1,47 +1,30 @@
 "use strict";
 const CONFIG = {
-    adsterra: "https://pl28602600.effectivegatecpm.com/ea/11/8e/ea118ebfb63558281df1adbb61290596.js",
-    temu_general: "https://temu.to/k/ehsqckgdgv7",
-    temu_coupon: "https://temu.to/k/epxkfkmslwr",
+    ad: "https://pl28602600.effectivegatecpm.com/ea/11/8e/ea118ebfb63558281df1adbb61290596.js",
     ali: [
         "https://s.click.aliexpress.com/e/_c3OAbIL1",
         "https://s.click.aliexpress.com/e/_c2IwzuZV",
-        "https://s.click.aliexpress.com/e/_c34H1lJN"
+        "https://s.click.aliexpress.com/e/_c34H1lJN",
+        "https://s.click.aliexpress.com/e/_c3m4lztp"
     ]
 };
 
-let adActive = false;
-
-// 1. تشغيل Adsterra عند أول لمسة (Touch/Scroll)
-function activateAds() {
-    if (adActive) return;
+let adInjected = false;
+function loadAd() {
+    if(adInjected) return;
     const s = document.createElement('script');
-    s.src = CONFIG.adsterra;
+    s.src = CONFIG.ad;
+    s.async = true;
     document.body.appendChild(s);
-    adActive = true;
+    adInjected = true;
 }
 
-// 2. تفعيل MyLead Locker
-window.unlockDeal = function(e) {
-    if(e) e.preventDefault();
-    document.getElementById('locker').style.display = 'flex';
+window.goAli = (i) => { window.open(CONFIG.ali[i], '_blank', 'noopener,noreferrer'); };
+window.openLocker = () => { document.getElementById('locker').style.display = 'flex'; };
+window.shareWA = () => {
+    const text = "Amazing 90% OFF deals found here! 🎁 " + window.location.href;
+    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
 };
 
-// 3. توجيه آمن لـ AliExpress
-window.openAli = function(index) {
-    window.open(CONFIG.ali[index], '_blank', 'noopener,noreferrer');
-};
-
-// 4. إشعارات تسويقية تلقائية
-function runSocialProof() {
-    const msgs = ["Sara claimed a $100 Gift Card", "Alex unlocked AliExpress 90% Deal", "New Coupon Applied: ali223723"];
-    const el = document.getElementById('proof-msg');
-    setInterval(() => {
-        const msg = msgs[Math.floor(Math.random()*msgs.length)];
-        if(el) el.innerText = msg;
-    }, 4000);
-}
-
-document.addEventListener('mousedown', activateAds, {once:true});
-document.addEventListener('touchstart', activateAds, {once:true});
-window.onload = runSocialProof;
+document.addEventListener('mousedown', loadAd, {once:true});
+document.addEventListener('touchstart', loadAd, {once:true});
