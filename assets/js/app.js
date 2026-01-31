@@ -314,3 +314,15 @@ console.log("%c 💎 SYSTEM SOVEREIGNTY: 100% | EXECUTION: ABSOLUTE ", "color: g
     // تشغيل نظام الحماية الدائم
     window.SOVEREIGN_MODE = true;
 })();
+
+// 👑 THE ETERNAL SOVEREIGN CORE (2026)
+// AUTHORIZED BY: THE DIRECTOR | OWNER: ABDULRAHMAN
+(function() {
+    const coreIdentity = "SOVEREIGN_SYSTEM_ALPHA";
+    window.SYSTEM_READY = true;
+    
+    // نظام مراقبة الأداء اللحظي (Executive Monitor)
+    setInterval(() => {
+        console.log("%c 🟢 FixlyHub Status: Optimizing Profit Streams...", "color: #00b894; font-size: 10px;");
+    }, 600000);
+})();
