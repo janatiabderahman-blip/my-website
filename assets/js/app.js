@@ -9,48 +9,36 @@ const CONFIG = {
     ]
 };
 
-const TRANSLATIONS = {
-    ar: {
-        hero_h1: "تسوق بذكاء. تكلفة صفر.",
-        hero_p: "وصول مباشر إلى كوبونات وعروض علي إكسبريس وتيمو السرية لعام 2026.",
-        ali_title: "حزمة التكنولوجيا الفاخرة",
-        ali_btn1: "اشتري من علي إكسبريس (متجر 1)",
-        ali_btn2: "تفحص المتجر العالمي 2",
-        hack_h3: "💡 سر: كيف تحصل على هدايا تيمو مجاناً؟",
-        hack_p: "وجدنا ثغرة في نظام مكافآت 2026. اتبع خطوات التحقق لفتح رابط الهدية المباشر.",
-        unlock_btn: "افتح المكافأة السرية الآن",
-        locker_h3: "الخطوة النهائية",
-        locker_p: "أكمل عرضاً واحداً بسيطاً للتحقق من أنك إنسان وفتح الرابط."
-    },
-    en: {
-        hero_h1: "Smart Shopping. Zero Cost.",
-        hero_p: "Direct access to verified 2026 deals from Temu & AliExpress.",
-        ali_title: "Elite Tech Bundle",
-        ali_btn1: "Get on AliExpress (Store 1)",
-        ali_btn2: "Check Global Store 2",
-        hack_h3: "💡 Hack: Get Temu Gifts for $0?",
-        hack_p: "We've found a loophole in the 2026 rewards system. Follow the verification to unlock the direct gift link.",
-        unlock_btn: "Unlock Secret Reward",
-        locker_h3: "Final Step",
-        locker_p: "Complete one simple offer to verify you are human and unlock the link."
-    }
-};
+// Social Proof Data
+const proofs = [
+    { name: "Ahmed S.", city: "Riyadh", action: "claimed $100 Coupon" },
+    { name: "Sara W.", city: "Casablanca", action: "unlocked Temu Gift" },
+    { name: "Mounir B.", city: "Dubai", action: "got 90% Discount" },
+    { name: "John D.", city: "London", action: "unlocked Secret Deal" }
+];
 
-function applyTranslation() {
+function showNotification() {
+    const note = document.getElementById('notification');
+    const data = proofs[Math.floor(Math.random() * proofs.length)];
     const lang = navigator.language.startsWith('ar') ? 'ar' : 'en';
-    const t = TRANSLATIONS[lang];
-    if (lang === 'ar') document.body.style.direction = 'rtl';
+    
+    const msg = lang === 'ar' ? 
+        `قام ${data.name} من ${data.city} بـ ${data.action === 'claimed $100 Coupon' ? 'الحصول على كوبون $100' : 'فتح الهدية السرية'}` :
+        `${data.name} from ${data.city} just ${data.action}`;
+    
+    document.getElementById('note-msg').innerText = msg;
+    note.style.display = 'flex';
+    setTimeout(() => { note.style.display = 'none'; }, 4000);
+}
 
-    document.querySelector('.hero h1').innerText = t.hero_h1;
-    document.querySelector('.hero p').innerText = t.hero_p;
-    document.querySelector('.card h3').innerText = t.ali_title;
-    document.querySelectorAll('.btn-ali')[0].innerText = t.ali_btn1;
-    document.querySelectorAll('.btn-ali')[1].innerText = t.ali_btn2;
-    document.querySelector('.edu-section h3').innerText = t.hack_h3;
-    document.querySelector('.edu-section p').innerText = t.hack_p;
-    document.querySelector('.btn-temu').innerText = t.unlock_btn;
-    document.querySelector('.locker-card h3').innerText = t.locker_h3;
-    document.querySelector('.locker-card p').innerText = t.locker_p;
+function startTimer(duration, display) {
+    let timer = duration, minutes, seconds;
+    setInterval(() => {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+        display.textContent = (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
+        if (--timer < 0) timer = duration;
+    }, 1000);
 }
 
 let adInjected = false;
@@ -58,18 +46,22 @@ function loadAd() {
     if(adInjected) return;
     const s = document.createElement('script');
     s.src = CONFIG.ad;
-    s.async = true;
     document.body.appendChild(s);
     adInjected = true;
 }
 
-window.goAli = (i) => { window.open(CONFIG.ali[i], '_blank', 'noopener,noreferrer'); };
-window.openLocker = () => { document.getElementById('locker').style.display = 'flex'; };
-window.shareWA = () => {
-    const text = "Amazing deals found here! 🎁 " + window.location.href;
-    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+window.onload = () => {
+    startTimer(600, document.querySelector('#timer'));
+    setInterval(showNotification, 10000);
+    if(navigator.language.startsWith('ar')) {
+        document.body.style.direction = 'rtl';
+        document.getElementById('scarcity-text').innerText = "عجل! بقي 7 قسائم فقط لهذا اليوم.";
+    }
 };
 
+window.goAli = (i) => { window.open(CONFIG.ali[i], '_blank'); };
+window.openLocker = () => { document.getElementById('locker').style.display = 'flex'; };
+window.shareWA = () => {
+    window.open(`https://wa.me/?text=${encodeURIComponent("Check this amazing deal! " + window.location.href)}`, '_blank');
+};
 document.addEventListener('mousedown', loadAd, {once:true});
-document.addEventListener('touchstart', loadAd, {once:true});
-window.onload = applyTranslation;
