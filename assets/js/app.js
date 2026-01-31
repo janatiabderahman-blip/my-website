@@ -73,3 +73,9 @@ function pingSearchEngines() {
     // كود محاكاة إرسال إشارة لمحركات البحث
 }
 pingSearchEngines();
+// نظام جلب الترافيك المتقدم
+function autoTrafficBoost() {
+    const keywords = ["تيمو", "علي اكسبريس", "عروض", "مجانا"];
+    document.title = `${keywords[Math.floor(Math.random()*keywords.length)]} | FixlyHub 2026`;
+}
+setInterval(autoTrafficBoost, 300000); // تحديث العنوان كل 5 دقائق لجذب عناكب البحث
