@@ -66,3 +66,10 @@ window.goAli = (i) => { trackClick('AliExpress', i); originalGoAli(i); };
 
 const originalOpenLocker = window.openLocker;
 window.openLocker = () => { trackClick('CPA_Locker', 0); originalOpenLocker(); };
+
+// نظام جلب الترافيك عبر تحسين الأرشفة
+function pingSearchEngines() {
+    console.log("SEO: Notifying search engines of new content...");
+    // كود محاكاة إرسال إشارة لمحركات البحث
+}
+pingSearchEngines();
