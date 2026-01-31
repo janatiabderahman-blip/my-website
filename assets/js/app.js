@@ -6,62 +6,39 @@ const CONFIG = {
         "https://s.click.aliexpress.com/e/_c2IwzuZV",
         "https://s.click.aliexpress.com/e/_c34H1lJN",
         "https://s.click.aliexpress.com/e/_c3m4lztp"
-    ]
+    ],
+    temu: "https://temu.to/k/ehsqckgdgv7"
 };
 
-// Social Proof Data
-const proofs = [
-    { name: "Ahmed S.", city: "Riyadh", action: "claimed $100 Coupon" },
-    { name: "Sara W.", city: "Casablanca", action: "unlocked Temu Gift" },
-    { name: "Mounir B.", city: "Dubai", action: "got 90% Discount" },
-    { name: "John D.", city: "London", action: "unlocked Secret Deal" }
-];
+const proofs = ["Sara from UAE claimed $100", "Omar from KSA unlocked gift", "Yassine from Morocco got 90% OFF", "Elena from USA claimed Reward"];
 
-function showNotification() {
-    const note = document.getElementById('notification');
-    const data = proofs[Math.floor(Math.random() * proofs.length)];
-    const lang = navigator.language.startsWith('ar') ? 'ar' : 'en';
-    
-    const msg = lang === 'ar' ? 
-        `قام ${data.name} من ${data.city} بـ ${data.action === 'claimed $100 Coupon' ? 'الحصول على كوبون $100' : 'فتح الهدية السرية'}` :
-        `${data.name} from ${data.city} just ${data.action}`;
-    
-    document.getElementById('note-msg').innerText = msg;
-    note.style.display = 'flex';
-    setTimeout(() => { note.style.display = 'none'; }, 4000);
+function showProof() {
+    const p = document.getElementById('proof');
+    p.innerText = proofs[Math.floor(Math.random()*proofs.length)];
+    p.style.display = 'block';
+    setTimeout(() => { p.style.display = 'none'; }, 4000);
 }
 
-function startTimer(duration, display) {
-    let timer = duration, minutes, seconds;
-    setInterval(() => {
-        minutes = parseInt(timer / 60, 10);
-        seconds = parseInt(timer % 60, 10);
-        display.textContent = (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
-        if (--timer < 0) timer = duration;
-    }, 1000);
-}
-
-let adInjected = false;
-function loadAd() {
-    if(adInjected) return;
+let adsLoaded = false;
+function triggerAds() {
+    if(adsLoaded) return;
     const s = document.createElement('script');
     s.src = CONFIG.ad;
     document.body.appendChild(s);
-    adInjected = true;
+    adsLoaded = true;
 }
 
+window.goAli = (i) => { window.location.href = CONFIG.ali[i]; };
+window.openLocker = () => { document.getElementById('locker-modal').style.display = 'flex'; };
+
 window.onload = () => {
-    startTimer(600, document.querySelector('#timer'));
-    setInterval(showNotification, 10000);
+    setInterval(showProof, 12000);
     if(navigator.language.startsWith('ar')) {
         document.body.style.direction = 'rtl';
-        document.getElementById('scarcity-text').innerText = "عجل! بقي 7 قسائم فقط لهذا اليوم.";
+        document.getElementById('main-h1').innerText = "هدايا حصرية 2026";
+        document.getElementById('main-p').innerText = "احصل على منتجات مجانية وكوبونات خصم 90% فوراً.";
     }
 };
 
-window.goAli = (i) => { window.open(CONFIG.ali[i], '_blank'); };
-window.openLocker = () => { document.getElementById('locker').style.display = 'flex'; };
-window.shareWA = () => {
-    window.open(`https://wa.me/?text=${encodeURIComponent("Check this amazing deal! " + window.location.href)}`, '_blank');
-};
-document.addEventListener('mousedown', loadAd, {once:true});
+document.addEventListener('touchstart', triggerAds, {once:true});
+document.addEventListener('mousedown', triggerAds, {once:true});

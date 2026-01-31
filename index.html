@@ -1,54 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FixlyHub | Premium Global Deals 2026</title>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FixlyHub | Edition 1,000,000</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_ID"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','YOUR_ID');</script>
 </head>
 <body>
-    <div class="app">
-        <div class="timer-bar">Limited Offer: Ends in <span id="timer">10:00</span></div>
+    <div class="top-banner">🔥 Flash Sale: 99% Off Ends In 09:54</div>
+    <div class="app-container">
         <header><a href="#" class="logo">FixlyHub.</a></header>
         
-        <section class="hero">
-            <span class="badge">VERIFIED BY GLOBAL SHOPPERS</span>
-            <h1>Smart Shopping. Zero Cost.</h1>
-            <p id="scarcity-text">Hurry! Only 7 coupons left for today.</p>
-        </section>
+        <div class="hero-box">
+            <span class="offer-badge">GLOBAL VERIFIED OFFERS</span>
+            <h1 id="main-h1" style="font-size: 2.2rem; letter-spacing: -1.5px; line-height: 1;">Premium Rewards For You.</h1>
+            <p id="main-p" style="color: #666; margin-top: 10px;">Select an offer below to start saving thousands.</p>
+        </div>
 
         <div class="card">
-            <div class="img-box">
-                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJycXF4OHB4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/3o7TKVUn7iM8FMEU24/giphy.gif" style="opacity:0.8;">
-                <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:white; font-weight:bold; text-shadow:0 2px 4px rgba(0,0,0,0.5);">Unboxing Joy</div>
-            </div>
-            <div class="info">
-                <h3>Elite Tech Bundle</h3>
-                <button onclick="goAli(0)" class="btn btn-ali">Get on AliExpress</button>
+            <div class="img-holder"><img src="https://images.unsplash.com/photo-1546868831-7066249695cf?w=600"></div>
+            <div class="info-section">
+                <h3>AliExpress Tech Treasure</h3>
+                <div class="price-row"><span class="new-price">$0.01</span> <span class="old-price">$299.00</span></div>
+                <button onclick="goAli(0)" class="btn btn-ali">Get Store Deal 1</button>
+                <button onclick="goAli(1)" class="btn btn-ali" style="background:#222;">Check Store Deal 2</button>
             </div>
         </div>
 
-        <div class="edu-section">
-            <h3>💡 Hack: Get Gifts for $0?</h3>
-            <p>Our 2026 system discovered a loophole. Complete the human verification to get your direct link.</p>
-            <button onclick="openLocker()" class="btn btn-temu">Unlock Secret Reward</button>
-        </div>
-
-        <div id="notification" class="notification">
-            <div style="background:var(--p); color:white; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-right:10px;">✓</div>
-            <div id="note-msg" style="font-size:0.8rem; font-weight:500;"></div>
-        </div>
-
-        <div class="whatsapp-float" onclick="shareWA()"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="30"></div>
-
-        <div id="locker" class="locker-overlay">
-            <div class="locker-card">
-                <h3>Final Verification</h3>
-                <div id="cpa-locker-ecc52a1e-fd33-11f0-be46-4e5c1971bddc"></div>
-                <script type="text/javascript" id="cpljs-ecc52a1e-fd33-11f0-be46-4e5c1971bddc" src="https://bestlocker.eu/iframeLoader/ecc52a1e-fd33-11f0-be46-4e5c1971bddc"></script>
-                <button onclick="document.getElementById('locker').style.display='none'" style="margin-top:20px; border:none; background:none; color:#999;">Cancel</button>
+        <div class="card" style="background: #f0fdf4; border-color: #bbf7d0;">
+            <div class="info-section">
+                <h3 style="color: #008060;">🎁 Hidden Temu Gift Loophole</h3>
+                <p style="font-size: 0.9rem; margin: 10px 0;">Complete 30s verification to unlock the direct link to your free items.</p>
+                <button onclick="openLocker()" class="btn btn-locker">Unlock Gift Now</button>
             </div>
+        </div>
+
+        <div class="card">
+            <div class="info-section">
+                <h3>More Global Deals</h3>
+                <button onclick="goAli(2)" class="btn btn-ali" style="background:#555;">AliExpress Link 3</button>
+                <button onclick="goAli(3)" class="btn btn-ali" style="background:#888;">AliExpress Link 4</button>
+            </div>
+        </div>
+
+        <footer style="padding: 40px 20px 150px; text-align: center; color: #aaa; font-size: 0.8rem;">
+            <p>&copy; 2026 FixlyHub Platinum Edition</p>
+            <a href="privacy.html" style="color: #ccc; text-decoration: none;">Privacy Policy</a>
+        </footer>
+
+        <div id="proof" class="proof-popup"></div>
+
+        <div class="sticky-footer">
+            <a href="https://temu.to/k/ehsqckgdgv7" class="btn btn-locker" style="margin-bottom:0;">Claim All Coupons (Code: ali223723)</a>
+        </div>
+    </div>
+
+    <div id="locker-modal">
+        <div class="modal-box">
+            <h2>Human Verification</h2>
+            <p style="margin: 15px 0; color: #666;">Complete one simple task below to verify your session and unlock the gift link.</p>
+            <div id="cpa-locker-ecc52a1e-fd33-11f0-be46-4e5c1971bddc"></div>
+            <script type="text/javascript" id="cpljs-ecc52a1e-fd33-11f0-be46-4e5c1971bddc" src="https://bestlocker.eu/iframeLoader/ecc52a1e-fd33-11f0-be46-4e5c1971bddc"></script>
+            <button onclick="document.getElementById('locker-modal').style.display='none'" style="margin-top:20px; border:none; background:none; color:#999;">Cancel</button>
         </div>
     </div>
     <script src="assets/js/app.js"></script>
