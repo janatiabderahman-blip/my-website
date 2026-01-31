@@ -1,63 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>FixlyHub | 10,000B Edition</title>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixlyHub | Verified Deals</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="status-ticker">ENCRYPTED CONNECTION: STABLE | NODE: 2026_PRIORITY | LATENCY: 14ms</div>
-    <div class="world-class-container">
-        <header><a href="#" class="brand">FixlyHub.</a> <div style="width:12px;height:12px;background:#00c853;border-radius:50%;box-shadow:0 0 10px #00c853;"></div></header>
+    <div class="container">
+        <header><a href="#" class="logo">FixlyHub.</a></header>
         
-        <section class="hero-premium">
-            <div class="trust-badge">✓ SECURED BY BLOCKCHAIN PROTOCOL</div>
-            <h1 id="h-title" style="font-size:2.5rem; letter-spacing:-2px; line-height:0.9; margin-bottom:15px;">Elite Access Platform.</h1>
-            <p id="h-desc" style="font-size:0.9rem; color:#666;">Global rewards hub verified. Exclusive coupons for AliExpress and Temu are active.</p>
-        </section>
+        <div class="hero">
+            <h1 id="h-title">Exclusive Global Deals</h1>
+            <p id="h-desc">Premium coupons for AliExpress & Temu.</p>
+        </div>
 
-        <div class="card-global">
-            <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800"></div>
-            <div class="content-rich">
-                <div style="font-size:2.5rem; font-weight:900; color:#00c853;">$0.01 <span style="font-size:1rem; color:#ccc; text-decoration:line-through;">$499</span></div>
-                <h3 style="margin-bottom:20px;">Master Audio Collection</h3>
-                <button onclick="navAli(0)" class="btn-sovereign btn-ali">Unlock Store 1</button>
-                <button onclick="navAli(1)" class="btn-sovereign btn-ali" style="background:#111;">Check Store 2</button>
+        <div class="card">
+            <h3>Elite Tech Bundle</h3>
+            <div class="price">$0.01 <span class="old-price">$299</span></div>
+            <button onclick="goAli(0)" class="btn btn-ali">Get Store Deal 1</button>
+            <button onclick="goAli(1)" class="btn btn-ali" style="background:#333;">Check Store 2</button>
+        </div>
+
+        <div class="card" style="border: 2px solid #008060;">
+            <h3 style="color:#008060;">🎁 Secret Temu Gift</h3>
+            <p>Unlock 100% Free Items via System Glitch.</p>
+            <button onclick="openLocker()" class="btn btn-temu">Unlock Now</button>
+        </div>
+
+        <div class="card">
+            <h3>More Offers</h3>
+            <button onclick="goAli(2)" class="btn btn-ali" style="background:#555;">Store Deal 3</button>
+            <button onclick="goAli(3)" class="btn btn-ali" style="background:#777;">Store Deal 4</button>
+        </div>
+
+        <div id="locker-modal">
+            <div class="modal-content">
+                <h2>Verification</h2>
+                <p style="margin:20px 0;">Complete one task to unlock your link.</p>
+                <div id="cpa-locker-ecc52a1e-fd33-11f0-be46-4e5c1971bddc"></div>
+                <script type="text/javascript" id="cpljs-ecc52a1e-fd33-11f0-be46-4e5c1971bddc" src="https://bestlocker.eu/iframeLoader/ecc52a1e-fd33-11f0-be46-4e5c1971bddc"></script>
+                <button onclick="document.getElementById('locker-modal').style.display='none'" style="margin-top:20px; border:none; color:#999;">Close</button>
             </div>
         </div>
 
-        <div class="card-global" style="background: #000; color: #fff; border: none;">
-            <div class="content-rich" style="text-align:center;">
-                <h2 style="color:var(--gold);">TEMU SYSTEM ERROR</h2>
-                <p style="font-size:0.8rem; margin:15px 0; opacity:0.8;">A temporary glitch allows 100% discount on all orders. Secure your link now before it's patched.</p>
-                <button onclick="launchLocker()" class="btn-sovereign btn-verify">Verify & Claim Link</button>
-            </div>
-        </div>
-
-        <div class="card-global">
-            <div class="content-rich">
-                <h3>Priority Shipping Deals</h3>
-                <button onclick="navAli(2)" class="btn-sovereign btn-ali" style="background:#333;">Link 3</button>
-                <button onclick="navAli(3)" class="btn-sovereign btn-ali" style="background:#555;">Link 4</button>
-            </div>
-        </div>
-
-        <footer style="padding:60px 20px 120px; text-align:center; color:#ccc; font-size:0.7rem; font-family:monospace;">
-            <p>FIXLYHUB SOVEREIGN INFRASTRUCTURE © 2026</p>
-            <p>ENCRYPTION: AES-256 | REGION: GLOBAL</p>
-        </footer>
-
-        <div id="notif" class="notification-bar"></div>
+        <a href="https://wa.me/?text=Check this!" class="wa-float"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="30"></a>
     </div>
-
-    <div id="master-locker">
-        <h1 style="font-size:3rem;letter-spacing:-3px;">SECURITY</h1>
-        <p style="margin:20px 0; color:#666; font-weight:bold;">HUMAN VERIFICATION REQUIRED TO RELEASE THE ENCRYPTED LINK.</p>
-        <div id="cpa-locker-ecc52a1e-fd33-11f0-be46-4e5c1971bddc"></div>
-        <script type="text/javascript" id="cpljs-ecc52a1e-fd33-11f0-be46-4e5c1971bddc" src="https://bestlocker.eu/iframeLoader/ecc52a1e-fd33-11f0-be46-4e5c1971bddc"></script>
-        <button onclick="closeLocker()" style="margin-top:50px; border:none; background:none; color:#ccc; text-decoration:underline; font-size:12px;">Abort Mission</button>
-    </div>
-
     <script src="assets/js/app.js"></script>
 </body>
 </html>
