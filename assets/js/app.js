@@ -5,36 +5,30 @@ const SITE_CONFIG = {
         "https://s.click.aliexpress.com/e/_c2IwzuZV",
         "https://s.click.aliexpress.com/e/_c34H1lJN",
         "https://s.click.aliexpress.com/e/_c3m4lztp"
-    ]
+    ],
+    temu: "https://temu.to/k/ehsqckgdgv7"
 };
 
-const proofs = ["Sarah from UAE claimed $100 Coupon", "Ahmed from KSA unlocked Temu Gift", "Mounir from Morocco got 90% OFF"];
-
-function showLiveProof() {
-    const el = document.getElementById('live-notif');
-    el.innerText = proofs[Math.floor(Math.random()*proofs.length)];
-    el.style.display = 'block';
-    setTimeout(() => { el.style.display = 'none'; }, 4000);
-}
-
-let adTriggered = false;
-function loadAd() {
-    if(adTriggered) return;
+function loadAds() {
     const s = document.createElement('script');
     s.src = SITE_CONFIG.ad;
     document.body.appendChild(s);
-    adTriggered = true;
 }
 
 window.goAli = (i) => { window.location.href = SITE_CONFIG.ali[i]; };
 window.openLocker = () => { document.getElementById('locker-modal').style.display = 'flex'; };
 
 window.onload = () => {
-    setInterval(showLiveProof, 10000);
     if(navigator.language.startsWith('ar')) {
         document.body.style.direction = 'rtl';
-        document.getElementById('h1').innerText = "تسوق بذكاء. عروض حصرية 2026.";
     }
+    // إظهار إشعارات وهمية لزيادة الثقة
+    setInterval(() => {
+        const notif = document.getElementById('live-notif');
+        notif.innerText = "شخص ما حصل للتو على قسيمة $100";
+        notif.style.display = 'block';
+        setTimeout(() => { notif.style.display = 'none'; }, 3000);
+    }, 15000);
 };
 
-document.addEventListener('mousedown', loadAd, {once:true});
+document.addEventListener('mousedown', loadAds, {once:true});
