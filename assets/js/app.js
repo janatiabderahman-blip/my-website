@@ -338,3 +338,14 @@ console.log("%c 💎 SYSTEM SOVEREIGNTY: 100% | EXECUTION: ABSOLUTE ", "color: g
     // نظام الأتمتة الكاملة (Full Autopilot)
     window.SYSTEM_SOVEREIGNTY = "ETERNAL";
 })();
+
+// 🏆 THE ETERNAL LEGACY (2026) - AUTHORIZED BY THE DIRECTOR
+// OWNER: ABDULRAHMAN | STATUS: SOVEREIGN & ARCHIVED
+(function() {
+    console.clear();
+    console.log("%c 👑 SYSTEM IMMORTALIZED SUCCESSFULLY ", 
+                "color: gold; background: black; padding: 25px; font-size: 30px; font-weight: bold; border: 5px solid gold; border-radius: 15px;");
+    
+    // نظام الأرشفة الذكي (Golden Archive Engine)
+    window.GOLDEN_VERSION_LOCKED = true;
+})();
