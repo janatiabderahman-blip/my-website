@@ -1,9 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
 <channel>
+
   <title>FixlyHub Deals</title>
   <link>https://janatiabderahman-blip.github.io/FixlyHub/</link>
   <description>Latest global deals and coupons from FixlyHub.</description>
   <language>en-us</language>
+
+  <!-- ITEM 1 -->
+  <item>
+    <title>Temu — General Deals</title>
+    <link>https://temu.to/k/ehsqckgdgv7</link>
+    <description>Discover the latest Temu general deals curated by FixlyHub.</description>
+    <pubDate>Mon, 01 Feb 2026 10:00:00 GMT</pubDate>
+    <guid>fixlyhub-temu-general-2026</guid>
+  </item>
+
+  <!-- ITEM 2 -->
+  <item>
+    <title>Temu — 1000 DH Coupons</title>
+    <link>https://temu.to/k/epxkfkmslwr</link>
+    <description>Claim your 1000 DH Temu coupons instantly.</description>
+    <pubDate>Mon, 01 Feb 2026 12:00:00 GMT</pubDate>
+    <guid>fixlyhub-temu-1000dh-2026</guid>
+  </item>
+
+  <!-- ITEM 3 -->
+  <item>
+    <title>AliExpress Hot Deal</title>
+    <link>https://s.click.aliexpress.com/e/_c3OAbIL1</link>
+    <description>Top AliExpress deal curated by FixlyHub.</description>
+    <pubDate>Mon, 01 Feb 2026 14:00:00 GMT</pubDate>
+    <guid>fixlyhub-aliexpress-hotdeal-2026</guid>
+  </item>
+
 </channel>
 </rss>
