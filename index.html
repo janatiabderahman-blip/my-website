@@ -6,8 +6,10 @@
   <title>FixlyHub — Global Deals & Smart Savings</title>
 
   <!-- SEO -->
-  <meta name="description" content="FixlyHub — Discover premium global deals, coupons, and exclusive offers from Temu, AliExpress, and more." />
+  <meta name="description" content="FixlyHub brings you the smartest global deals, coupons, and exclusive offers from Temu, AliExpress, and top marketplaces — updated daily." />
   <meta name="keywords" content="FixlyHub, deals, coupons, Temu, AliExpress, offers, discounts" />
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="FixlyHub">
   <link rel="canonical" href="https://janatiabderahman-blip.github.io/FixlyHub/" />
 
   <!-- Social Sharing -->
@@ -16,21 +18,22 @@
   <meta property="og:image" content="assets/img/fixlyhub-preview.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://janatiabderahman-blip.github.io/FixlyHub/">
-
-  <!-- Social Sharing Boost -->
   <meta property="og:site_name" content="FixlyHub">
   <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="FixlyHub — Global Deals & Smart Savings">
   <meta name="twitter:description" content="Discover premium global deals, coupons, and exclusive offers updated daily.">
   <meta name="twitter:image" content="assets/img/fixlyhub-preview.png">
- 
+
   <!-- Favicon -->
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+  <!-- Main Styles -->
   <style>
     :root {
       --bg: #ffffff;
@@ -49,7 +52,6 @@
       line-height: 1.6;
     }
 
-    /* Header */
     header {
       padding: 18px 6%;
       display: flex;
@@ -73,7 +75,6 @@
 
     nav a:hover { color: var(--accent); }
 
-    /* Hero */
     .hero {
       padding: 70px 6% 50px;
       max-width: 900px;
@@ -104,22 +105,15 @@
       font-size: 1rem;
     }
 
-    /* Sections */
     .section {
       padding: 40px 6%;
       max-width: 900px;
       margin: auto;
     }
 
-    .section h2 {
-      margin-bottom: 15px;
-    }
+    .section h2 { margin-bottom: 15px; }
+    .section p { color: var(--subtext); }
 
-    .section p {
-      color: var(--subtext);
-    }
-
-    /* Ads */
     .ad-container {
       max-width: 900px;
       margin: 40px auto;
@@ -130,7 +124,6 @@
       text-align: center;
     }
 
-    /* Footer */
     footer {
       padding: 30px 6%;
       text-align: center;
@@ -145,33 +138,89 @@
       text-decoration: none;
     }
 
-    .small-link:hover {
-      color: var(--accent);
+    .small-link:hover { color: var(--accent); }
+
+    /* Mobile Improvements */
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+      .ad-container { padding: 10px; }
+    }
+
+    /* Floating CTA */
+    .floating-cta {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #007aff;
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 999;
     }
   </style>
 
+  <!-- Main Schema -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "FixlyHub",
-  "url": "https://janatiabderahman-blip.github.io/FixlyHub/",
-  "description": "FixlyHub curates global deals, coupons, and affiliate offers from Temu, AliExpress, and more.",
-  "publisher": {
-    "@type": "Organization",
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
     "name": "FixlyHub",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://copilot.microsoft.com/th/id/BCO.c88cb1dd-45f1-448d-861b-86dec3dba8b0.png"
+    "url": "https://janatiabderahman-blip.github.io/FixlyHub/",
+    "description": "FixlyHub curates global deals, coupons, and affiliate offers from Temu, AliExpress, and more.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "FixlyHub",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://copilot.microsoft.com/th/id/BCO.c88cb1dd-45f1-448d-861b-86dec3dba8b0.png"
+      }
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://janatiabderahman-blip.github.io/FixlyHub/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
     }
-  },
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://janatiabderahman-blip.github.io/FixlyHub/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
   }
-}
-</script>
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does FixlyHub choose offers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We filter thousands of deals daily and select only verified, high-value offers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are the links safe?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — all links are official affiliate links from Temu, AliExpress, and trusted CPA networks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do offers change daily?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, new offers are added every day based on performance and global trends."
+        }
+      }
+    ]
+  }
+  </script>
+
 </head>
 
 <body>
@@ -272,12 +321,14 @@
   <a href="terms-privacy.html" class="small-link">Terms & Privacy</a>
 </footer>
 
+<!-- Service Worker -->
 <script>
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("service-worker.js");
   }
 </script>
-  
+
+<!-- Notifications -->
 <script>
   if ("Notification" in window) {
     Notification.requestPermission().then(function(permission) {
@@ -285,8 +336,9 @@
     });
   }
 </script>
-  
-  <script>
+
+<!-- Viral Referral System -->
+<script>
 function generateReferral() {
   const userId = Math.random().toString(36).substring(2, 10);
   const referralLink = window.location.origin + "/FixlyHub/?ref=" + userId;
@@ -300,7 +352,10 @@ function showReferralPopup() {
 }
 
 setTimeout(showReferralPopup, 4000);
-  </script>
-  
+</script>
+
+<!-- Floating CTA -->
+<a href="offers.html" class="floating-cta">🔥 Best Offers Today</a>
+
 </body>
-</html>
+  </html>
