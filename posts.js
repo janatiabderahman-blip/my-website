@@ -1,4 +1,4 @@
-// posts.js — Enhanced dynamic blog posts with optimized images & safe HTML
+// posts.js — Enhanced dynamic blog posts with SEO, safe HTML, alt text, and optimized images
 
 const FIXLY_POSTS = [
   {
@@ -13,6 +13,7 @@ const FIXLY_POSTS = [
     content: `
       <img 
         src="https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+        alt="Temu savings guide"
         loading="lazy"
         onerror="this.src='assets/img/fallback.jpg'"
         style="width:100%;border-radius:12px;margin-bottom:20px;"
@@ -43,6 +44,7 @@ const FIXLY_POSTS = [
     content: `
       <img 
         src="https://images.pexels.com/photos/5632370/pexels-photo-5632370.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+        alt="AliExpress trending products"
         loading="lazy"
         onerror="this.src='assets/img/fallback.jpg'"
         style="width:100%;border-radius:12px;margin-bottom:20px;"
@@ -74,6 +76,7 @@ const FIXLY_POSTS = [
     content: `
       <img 
         src="https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+        alt="FixlyHub monetization strategy"
         loading="lazy"
         onerror="this.src='assets/img/fallback.jpg'"
         style="width:100%;border-radius:12px;margin-bottom:20px;"
