@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FixlyHub — Global Deals & Smart Savings</title>
+
+  <meta name="description" content="FixlyHub — Discover premium global deals, coupons, and exclusive offers from Temu, AliExpress, and more." />
+  <meta name="keywords" content="FixlyHub, deals, coupons, Temu, AliExpress, offers, discounts" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --subtext: #555555;
+      --accent: #007aff;
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 100;
+    }
+    .logo { font-size: 1.5rem; font-weight: 700; }
+    nav a {
+      margin-left: 18px;
+      text-decoration: none;
+      color: var(--subtext);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    nav a:hover { color: var(--accent); }
+    .hero {
+      padding: 70px 6% 50px;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.7rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--subtext);
+      margin-bottom: 25px;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      padding: 13px 26px;
+      border-radius: var(--radius);
+      font-size: 0.98rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.9; }
+    .section {
+      padding: 55px 6%;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--subtext);
+      margin-bottom: 35px;
+      font-size: 0.98rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+    }
+    .card {
+      padding: 22px;
+      border: 1px solid #eee;
+      border-radius: var(--radius);
+      transition: 0.2s;
+      background: #fff;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    }
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.15rem;
+    }
+    .card p {
+      color: var(--subtext);
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: #f1f5ff;
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .testimonial {
+      text-align: center;
+      padding: 22px;
+      border-radius: var(--radius);
+      border: 1px solid #eee;
+      font-size: 0.95rem;
+      background: #fafafa;
+    }
+    .newsletter-box {
+      text-align: center;
+      padding: 35px;
+      border-radius: var(--radius);
+      background: #f8f9ff;
+    }
+    .newsletter-box input {
+      padding: 11px 14px;
+      border-radius: var(--radius);
+      border: 1px solid #ccc;
+      width: 260px;
+      max-width: 100%;
+    }
+    footer {
+      padding: 30px 6%;
+      text-align: center;
+      color: var(--subtext);
+      border-top: 1px solid #eee;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+    .small-link { color: var(--subtext); text-decoration: none; }
+    .small-link:hover { color: var(--accent); }
+    @media (max-width: 600px) {
+      header { flex-direction: column; align-items: flex-start; }
+      nav { margin-top: 8px; }
+      nav a { margin-left: 0; margin-right: 12px; }
+      .hero h1 { font-size: 2.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">FixlyHub</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="offers.html">Offers</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Premium Global Deals. Zero Noise.</h1>
+    <p>FixlyHub curates the smartest deals from Temu, AliExpress, and top marketplaces — clean, fast, and built for global savings.</p>
+    <a href="offers.html" class="btn-primary">Explore All Offers</a>
+  </section>
+
+  <!-- VALUE -->
+  <section class="section">
+    <h2 class="section-title">Why FixlyHub?</h2>
+    <p class="section-sub">Inspired by the world’s top-performing deal platforms — optimized for conversions and trust.</p>
+
+    <div class="grid">
+      <div class="card">
+        <span class="badge">Curated</span>
+        <h3>High‑value offers only</h3>
+        <p>We focus on real savings from Temu, AliExpress, and premium partners — no random low‑quality links.</p>
+      </div>
+      <div class="card">
+        <span class="badge">UX First</span>
+        <h3>Minimal & fast</h3>
+        <p>Apple‑style minimal design, fast loading, and mobile‑first layout for global audiences.</p>
+      </div>
+      <div class="card">
+        <span class="badge">Monetized Smartly</span>
+        <h3>Clean monetization</h3>
+        <p>Affiliate links, Adsterra, and CPA locker integrated in a non‑intrusive, conversion‑optimized way.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTED DEALS -->
+  <section class="section">
+    <h2 class="section-title">Highlighted Deals</h2>
+    <p class="section-sub">Top‑performing offers from your current stack.</p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Temu — General Deals</h3>
+        <p>🌟 Puisez dans le trésor de Temu ! Cliquez pour découvrir des offres incroyables et faire de super économies !</p>
+        <a href="https://temu.to/k/ehsqckgdgv7" class="btn-primary" target="_blank">Open Temu</a>
+      </div>
+
+      <div class="card">
+        <h3>Temu — Coupons Pack</h3>
+        <p>💰 Économisez gros aujourd’hui ! Obtenez votre lot de coupons 1,000 DH instantanément.</p>
+        <p>Use code <strong>ali223723</strong> in the Temu app for 30% OFF.</p>
+        <a href="https://temu.to/k/epxkfkmslwr" class="btn-primary" target="_blank">Get Coupons</a>
+      </div>
+
+      <div class="card">
+        <h3>AliExpress — Hot Picks</h3>
+        <p>Curated AliExpress links for trending products and flash deals.</p>
+        <a href="offers.html" class="btn-primary">View All AliExpress Links</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="section">
+    <h2 class="section-title">What users say</h2>
+    <p class="section-sub">Social proof inspired by top global platforms.</p>
+
+    <div class="grid">
+      <div class="testimonial">“I used FixlyHub’s Temu coupons and saved more than I expected. Simple and fast.” — Lina</div>
+      <div class="testimonial">“Feels premium, not spammy. The offers are actually useful.” — Omar</div>
+      <div class="testimonial">“Clean design, clear CTAs, and real savings. I keep coming back.” — Sara</div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="section">
+    <div class="newsletter-box">
+      <h2>Stay ahead of the next big deal</h2>
+      <p>Join our newsletter to receive fresh coupons, flash deals, and exclusive partner offers.</p>
+      <input type="email" placeholder="Your email" />
+      <br><br>
+      <a href="#" class="btn-primary">Join Free</a>
+      <p style="color:var(--subtext);font-size:0.85rem;margin-top:10px;">No spam. Just high‑signal deals.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 FixlyHub — All rights reserved. ·
+    <a href="terms-privacy.html" class="small-link">Terms & Privacy</a>
+  </footer>
+
+</body>
+</html>
