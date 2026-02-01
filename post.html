@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FixlyHub — Article</title>
+
+  <!-- SEO (سيتم تحديثه ديناميكيًا عبر JS) -->
+  <meta name="description" content="FixlyHub article page">
+  <link rel="canonical" href="">
+
+  <!-- Social Sharing -->
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+  <meta property="og:type" content="article">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:#ffffff;
+      --text:#111111;
+      --subtext:#555555;
+      --accent:#007aff;
+      --radius:14px;
+    }
+    body{
+      margin:0;
+      font-family:'Inter',sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+    header{
+      padding:18px 6%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid #eee;
+      position:sticky;
+      top:0;
+      background:#fff;
+      z-index:100;
+    }
+    nav a{
+      margin-left:18px;
+      text-decoration:none;
+      color:var(--subtext);
+      font-size:0.95rem;
+      font-weight:500;
+    }
+    nav a:hover{color:var(--accent);}
+    .post-container{
+      padding:40px 6%;
+      max-width:900px;
+      margin:auto;
+    }
+    .post-title{
+      font-size:2rem;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+    .post-meta{
+      color:var(--subtext);
+      font-size:0.9rem;
+      margin-bottom:25px;
+    }
+    .post-image{
+      width:100%;
+      border-radius:14px;
+      margin-bottom:25px;
+    }
+    footer{
+      padding:30px 6%;
+      text-align:center;
+      color:var(--subtext);
+      border-top:1px solid #eee;
+      margin-top:40px;
+      font-size:0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo" style="display:flex;align-items:center;">
+    <a href="index.html" style="display:flex;align-items:center;text-decoration:none;" rel="noopener noreferrer">
+      <img src="https://copilot.microsoft.com/th/id/BCO.c88cb1dd-45f1-448d-861b-86dec3dba8b0.png"
+           alt="FixlyHub Logo"
+           loading="lazy"
+           style="height:50px;margin-right:12px;">
+      <span style="font-size:1.6rem;font-weight:700;color:#111;">FixlyHub</span>
+    </a>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="offers.html">Offers</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="post-container">
+  <h1 class="post-title" id="post-title">Loading...</h1>
+  <div class="post-meta" id="post-meta"></div>
+  <img id="post-image" class="post-image" src="" alt="Post Image" loading="lazy">
+  <div id="post-content"></div>
+</section>
+
+<footer>
+  © 2026 FixlyHub — Smart Savings Insights
+</footer>
+
+<!-- Load posts.js -->
+<script src="posts.js"></script>
+
+<script>
+  // Get slug from URL
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get("slug");
+
+  // Find post
+  const post = FIXLY_POSTS.find(p => p.slug === slug);
+
+  if (!post) {
+    document.getElementById("post-title").innerText = "Post Not Found";
+  } else {
+    // Fill content
+    document.getElementById("post-title").innerText = post.title;
+    document.getElementById("post-meta").innerText =
+      `${post.category} · ${post.date} · ${post.readTime}`;
+    document.getElementById("post-image").src = post.image;
+    document.getElementById("post-content").innerHTML = post.content;
+
+    // Update SEO dynamically
+    document.querySelector("meta[name='description']").setAttribute("content", post.seoDescription);
+    document.querySelector("link[rel='canonical']").setAttribute("href", window.location.href);
+
+    document.querySelector("meta[property='og:title']").setAttribute("content", post.title);
+    document.querySelector("meta[property='og:description']").setAttribute("content", post.seoDescription);
+    document.querySelector("meta[property='og:image']").setAttribute("content", post.image);
+  }
+</script>
+
+<!-- Adsterra Script -->
+<script src="https://pl28602600.effectivegatecpm.com/ea/11/8e/ea118ebfb63558281df1adbb61290596.js"></script>
+
+</body>
+</html>
