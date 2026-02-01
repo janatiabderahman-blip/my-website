@@ -3,123 +3,134 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FixlyHub — Blog</title>
-  <meta name="description" content="FixlyHub Blog — Global deals, smart savings, UX, and monetization insights." />
+  <title>FixlyHub — Smart Savings Blog</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    :root { --bg:#fff;--text:#111;--subtext:#555;--accent:#007aff;--radius:14px; }
-    *{box-sizing:border-box;}
-    body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
-    header{padding:18px 6%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff;z-index:100;}
-    .logo{font-size:1.5rem;font-weight:700;}
-    nav a{margin-left:18px;text-decoration:none;color:var(--subtext);font-size:0.95rem;font-weight:500;}
-    nav a:hover{color:var(--accent);}
-    .section{padding:55px 6%;max-width:900px;margin:auto;}
-    h1{font-size:2rem;margin-bottom:10px;}
-    p{color:var(--subtext);font-size:0.97rem;}
-    .posts-list{margin-top:25px;}
-    .post-card{padding:20px 0;border-bottom:1px solid #eee;cursor:pointer;}
-    .post-card:last-child{border-bottom:none;}
-    .post-card img{width:100%;border-radius:12px;margin-bottom:10px;}
-    .post-title{font-size:1.15rem;font-weight:600;margin:0 0 4px;}
-    .post-meta{font-size:0.8rem;color:var(--subtext);margin-bottom:6px;}
-    .post-excerpt{font-size:0.9rem;color:var(--subtext);}
-    .badge{display:inline-block;padding:2px 8px;border-radius:999px;background:#f1f5ff;color:var(--accent);font-size:0.7rem;font-weight:600;margin-right:6px;}
-    .post-view{margin-top:30px;padding:20px;border-radius:var(--radius);border:1px solid #eee;background:#fafafa;}
-    .post-view img{width:100%;border-radius:12px;margin-bottom:20px;}
-    .back-link{display:inline-block;margin-top:15px;font-size:0.9rem;color:var(--accent);text-decoration:none;}
-    .back-link:hover{text-decoration:underline;}
-    footer{padding:30px 6%;text-align:center;color:var(--subtext);border-top:1px solid #eee;margin-top:40px;font-size:0.9rem;}
-    .small-link{color:var(--subtext);text-decoration:none;}
-    .small-link:hover{color:var(--accent);}
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --subtext: #555555;
+      --accent: #007aff;
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 100;
+    }
+    nav a {
+      margin-left: 18px;
+      text-decoration: none;
+      color: var(--subtext);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    nav a:hover { color: var(--accent); }
+
+    .blog-container {
+      padding: 40px 6%;
+      max-width: 900px;
+      margin: auto;
+    }
+    .post-card {
+      border: 1px solid #eee;
+      padding: 20px;
+      border-radius: 14px;
+      margin-bottom: 20px;
+      background: #fff;
+    }
+    .post-card h2 {
+      margin-top: 0;
+      font-size: 1.4rem;
+    }
+    .post-card p {
+      color: var(--subtext);
+    }
+    .btn-primary {
+      display: inline-block;
+      padding: 10px 18px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    footer {
+      padding: 30px 6%;
+      text-align: center;
+      color: var(--subtext);
+      border-top: 1px solid #eee;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">
-  <a href="index.html">
-    <img src="https://copilot.microsoft.com/th/id/BCO.c88cb1dd-45f1-448d-861b-86dec3dba8b0.png" 
-         alt="FixlyHub Logo" 
-         style="height:40px; margin-right:10px;">
-  </a>
-</div>
+  <div class="logo" style="display:flex;align-items:center;">
+    <a href="index.html" style="display:flex;align-items:center;text-decoration:none;">
+      <img src="https://copilot.microsoft.com/th/id/BCO.c88cb1dd-45f1-448d-861b-86dec3dba8b0.png"
+           alt="FixlyHub Logo"
+           style="height:48px; margin-right:10px;">
+      <span style="font-size:1.5rem;font-weight:700;color:#111;">FixlyHub</span>
+    </a>
+  </div>
   <nav>
     <a href="index.html">Home</a>
     <a href="offers.html">Offers</a>
-    <a href="about.html">About</a>
     <a href="blog.html">Blog</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
 
-<section class="section">
-  <h1>FixlyHub Blog</h1>
-  <p>Premium insights on deals, savings, UX, and monetization — inspired by top‑earning platforms.</p>
+<section class="blog-container">
+  <h1>Smart Savings Blog</h1>
+  <p>Learn how to maximize your savings using Temu, AliExpress, and exclusive CPA offers.</p>
 
-  <div id="posts-list" class="posts-list"></div>
-  <div id="post-view" class="post-view" style="display:none;"></div>
+  <div class="post-card">
+    <h2>How to Stack Temu Coupons for Maximum Savings</h2>
+    <p>Discover how to combine general links, coupon codes, and hot offers to get the best prices.</p>
+    <a href="offers.html" class="btn-primary">View Temu Deals</a>
+  </div>
+
+  <div class="post-card">
+    <h2>AliExpress: Finding Hidden Gem Deals</h2>
+    <p>Tips to use affiliate links and flash sales to save more on AliExpress.</p>
+    <a href="offers.html" class="btn-primary">Open AliExpress Deals</a>
+  </div>
+
+  <div class="post-card">
+    <h2>CPA Lockers: Turn Traffic into High-Value Conversions</h2>
+    <p>Why CPA lockers like MyLead can boost your earnings when used strategically.</p>
+    <a href="offers.html" class="btn-primary">Unlock Bonus Offers</a>
+  </div>
 </section>
 
 <footer>
-  © 2026 FixlyHub — All rights reserved. ·
-  <a href="terms-privacy.html" class="small-link">Terms & Privacy</a>
+  © 2026 FixlyHub — Smart Savings Insights
 </footer>
 
-<!-- Load posts data -->
-<script src="posts.js"></script>
-
-<!-- Blog logic -->
-<script>
-  const postsListEl = document.getElementById('posts-list');
-  const postViewEl = document.getElementById('post-view');
-
-  function renderPostsList() {
-    postsListEl.innerHTML = '';
-    postViewEl.style.display = 'none';
-
-    FIXLY_POSTS.forEach(post => {
-      const div = document.createElement('div');
-      div.className = 'post-card';
-      div.onclick = () => openPost(post.slug);
-
-      div.innerHTML = `
-        <img src="${post.image}" alt="${post.title}">
-        <div class="post-meta">
-          <span class="badge">${post.category}</span>
-          <span>${post.date} · ${post.readTime}</span>
-        </div>
-        <h2 class="post-title">${post.title}</h2>
-        <p class="post-excerpt">${post.excerpt}</p>
-      `;
-
-      postsListEl.appendChild(div);
-    });
-  }
-
-  function openPost(slug) {
-    const post = FIXLY_POSTS.find(p => p.slug === slug);
-    if (!post) return;
-
-    postsListEl.innerHTML = '';
-    postViewEl.style.display = 'block';
-
-    postViewEl.innerHTML = `
-      <div class="post-meta">
-        <span class="badge">${post.category}</span>
-        <span>${post.date} · ${post.readTime}</span>
-      </div>
-      <h2>${post.title}</h2>
-      ${post.content}
-      <a href="#" class="back-link" onclick="renderPostsList();return false;">← Back to all posts</a>
-    `;
-  }
-
-  // Initial render
-  renderPostsList();
-</script>
+<!-- Adsterra Script -->
+<script src="https://pl28602600.effectivegatecpm.com/ea/11/8e/ea118ebfb63558281df1adbb61290596.js"></script>
 
 </body>
 </html>
