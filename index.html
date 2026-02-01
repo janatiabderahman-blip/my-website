@@ -17,6 +17,14 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://janatiabderahman-blip.github.io/FixlyHub/">
 
+  <!-- Social Sharing Boost -->
+  <meta property="og:site_name" content="FixlyHub">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FixlyHub — Global Deals & Smart Savings">
+  <meta name="twitter:description" content="Discover premium global deals, coupons, and exclusive offers updated daily.">
+  <meta name="twitter:image" content="assets/img/fixlyhub-preview.png">
+ 
   <!-- Favicon -->
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
 
@@ -246,6 +254,30 @@
     navigator.serviceWorker.register("service-worker.js");
   }
 </script>
+  
+<script>
+  if ("Notification" in window) {
+    Notification.requestPermission().then(function(permission) {
+      console.log("Notifications:", permission);
+    });
+  }
+</script>
+  
+  <script>
+function generateReferral() {
+  const userId = Math.random().toString(36).substring(2, 10);
+  const referralLink = window.location.origin + "/FixlyHub/?ref=" + userId;
+  localStorage.setItem("referral", referralLink);
+  return referralLink;
+}
 
+function showReferralPopup() {
+  const link = generateReferral();
+  alert("Share this link and earn rewards:\n" + link);
+}
+
+setTimeout(showReferralPopup, 4000);
+  </script>
+  
 </body>
 </html>
