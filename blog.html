@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FixlyHub — Blog</title>
+  <meta name="description" content="FixlyHub Blog — Global deals, smart savings, and monetization insights." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root { --bg:#fff;--text:#111;--subtext:#555;--accent:#007aff;--radius:14px; }
+    body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);}
+    header{padding:18px 6%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;}
+    .logo{font-size:1.5rem;font-weight:700;}
+    nav a{margin-left:18px;text-decoration:none;color:var(--subtext);}
+    nav a:hover{color:var(--accent);}
+    .section{padding:55px 6%;max-width:900px;margin:auto;}
+    .post-card{padding:20px 0;border-bottom:1px solid #eee;cursor:pointer;}
+    .post-card img{width:100%;border-radius:12px;margin-bottom:12px;}
+    .post-title{font-size:1.2rem;font-weight:600;margin:0;}
+    .post-meta{font-size:0.8rem;color:var(--subtext);margin-bottom:6px;}
+    .post-excerpt{font-size:0.9rem;color:var(--subtext);}
+    .post-view{margin-top:30px;padding:20px;border-radius:var(--radius);border:1px solid #eee;background:#fafafa;}
+    .post-view img{width:100%;border-radius:12px;margin-bottom:20px;}
+    .back-link{color:var(--accent);font-size:0.9rem;text-decoration:none;}
+    .back-link:hover{text-decoration:underline;}
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">FixlyHub</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="offers.html">Offers</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="section">
+  <h1>FixlyHub Blog</h1>
+  <p>Premium insights on deals, savings, and monetization.</p>
+
+  <div id="posts-list"></div>
+  <div id="post-view" style="display:none;"></div>
+</section>
+
+<script src="posts.js"></script>
+
+<script>
+  const listEl = document.getElementById("posts-list");
+  const viewEl = document.getElementById("post-view");
+
+  function renderList() {
+    listEl.innerHTML = "";
+    viewEl.style.display = "none";
+
+    FIXLY_POSTS.forEach(post => {
+      const div = document.createElement("div");
+      div.className = "post-card";
+      div.onclick = () => openPost(post.slug);
+
+      div.innerHTML = `
+        <img src="${post.image}">
+        <div class="post-meta">${post.category} · ${post.date} · ${post.readTime}</div>
+        <h2 class="post-title">${post.title}</h2>
+        <p class="post-excerpt">${post.excerpt}</p>
+      `;
+
+      listEl.appendChild(div);
+    });
+  }
+
+  function openPost(slug) {
+    const post = FIXLY_POSTS.find(p => p.slug === slug);
+    if (!post) return;
+
+    listEl.innerHTML = "";
+    viewEl.style.display = "block";
+
+    viewEl.innerHTML = `
+      <div class="post-meta">${post.category} · ${post.date} · ${post.readTime}</div>
+      <h2>${post.title}</h2>
+      ${post.content}
+      <a href="#" class="back-link" onclick="renderList();return false;">← Back to all posts</a>
+    `;
+  }
+
+  renderList();
+</script>
+
+</body>
+</html>
