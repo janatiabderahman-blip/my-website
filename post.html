@@ -3,17 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FixlyHub — Article</title>
+  <title id="dynamic-title">FixlyHub — Article</title>
 
-  <!-- SEO (سيتم تحديثه ديناميكيًا عبر JS) -->
-  <meta name="description" content="FixlyHub article page">
-  <link rel="canonical" href="">
+  <!-- SEO (Dynamic) -->
+  <meta name="description" content="FixlyHub article page" id="dynamic-description">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="FixlyHub">
+  <link rel="canonical" href="" id="dynamic-canonical">
 
-  <!-- Social Sharing -->
-  <meta property="og:title" content="">
-  <meta property="og:description" content="">
-  <meta property="og:image" content="">
+  <!-- Open Graph -->
+  <meta property="og:title" content="" id="og-title">
+  <meta property="og:description" content="" id="og-description">
+  <meta property="og:image" content="" id="og-image">
   <meta property="og:type" content="article">
+  <meta property="og:site_name" content="FixlyHub">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="" id="tw-title">
+  <meta name="twitter:description" content="" id="tw-description">
+  <meta name="twitter:image" content="" id="tw-image">
 
   <!-- Favicon -->
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
@@ -53,6 +62,7 @@
       color:var(--subtext);
       font-size:0.95rem;
       font-weight:500;
+      transition:0.2s;
     }
     nav a:hover{color:var(--accent);}
     .post-container{
@@ -83,6 +93,27 @@
       margin-top:40px;
       font-size:0.9rem;
     }
+
+    /* Mobile improvements */
+    @media (max-width: 600px) {
+      .post-title { font-size: 1.7rem; }
+      .post-container { padding: 30px 5%; }
+    }
+
+    /* Floating CTA */
+    .floating-cta {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #007aff;
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 999;
+    }
   </style>
 </head>
 
@@ -109,7 +140,7 @@
 <section class="post-container">
   <h1 class="post-title" id="post-title">Loading...</h1>
   <div class="post-meta" id="post-meta"></div>
-  <img id="post-image" class="post-image" src="" alt="Post Image" loading="lazy">
+  <img id="post-image" class="post-image" src="" alt="Post Image" loading="lazy" onerror="this.src='assets/img/fallback.jpg'">
   <div id="post-content"></div>
 </section>
 
@@ -121,11 +152,9 @@
 <script src="posts.js"></script>
 
 <script>
-  // Get slug from URL
   const params = new URLSearchParams(window.location.search);
   const slug = params.get("slug");
 
-  // Find post
   const post = FIXLY_POSTS.find(p => p.slug === slug);
 
   if (!post) {
@@ -138,18 +167,55 @@
     document.getElementById("post-image").src = post.image;
     document.getElementById("post-content").innerHTML = post.content;
 
-    // Update SEO dynamically
-    document.querySelector("meta[name='description']").setAttribute("content", post.seoDescription);
-    document.querySelector("link[rel='canonical']").setAttribute("href", window.location.href);
+    // Dynamic SEO
+    document.getElementById("dynamic-title").innerText = post.title + " — FixlyHub";
+    document.getElementById("dynamic-description").setAttribute("content", post.seoDescription);
+    document.getElementById("dynamic-canonical").setAttribute("href", window.location.href);
 
-    document.querySelector("meta[property='og:title']").setAttribute("content", post.title);
-    document.querySelector("meta[property='og:description']").setAttribute("content", post.seoDescription);
-    document.querySelector("meta[property='og:image']").setAttribute("content", post.image);
+    // OG
+    document.getElementById("og-title").setAttribute("content", post.title);
+    document.getElementById("og-description").setAttribute("content", post.seoDescription);
+    document.getElementById("og-image").setAttribute("content", post.image);
+
+    // Twitter
+    document.getElementById("tw-title").setAttribute("content", post.title);
+    document.getElementById("tw-description").setAttribute("content", post.seoDescription);
+    document.getElementById("tw-image").setAttribute("content", post.image);
+
+    // Inject Article Schema
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": post.title,
+      "image": post.image,
+      "datePublished": post.date,
+      "author": {
+        "@type": "Organization",
+        "name": "FixlyHub"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FixlyHub",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://copilot.microsoft.com/th/id/BCO.c88cb1dd-45f1-448d-861b-86dec3dba8b0.png"
+        }
+      },
+      "description": post.seoDescription
+    };
+
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(schema);
+    document.head.appendChild(script);
   }
 </script>
 
 <!-- Adsterra Script -->
 <script src="https://pl28602600.effectivegatecpm.com/ea/11/8e/ea118ebfb63558281df1adbb61290596.js"></script>
+
+<!-- Floating CTA -->
+<a href="offers.html" class="floating-cta">🔥 Best Offers Today</a>
 
 </body>
 </html>
