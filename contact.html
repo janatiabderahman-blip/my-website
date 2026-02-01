@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FixlyHub — Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#fff;--text:#111;--subtext:#555;--accent:#007aff;--radius:14px; }
+    body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+    header{padding:18px 6%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff;z-index:100;}
+    .logo{font-size:1.5rem;font-weight:700;}
+    nav a{margin-left:18px;text-decoration:none;color:var(--subtext);font-size:0.95rem;font-weight:500;}
+    nav a:hover{color:var(--accent);}
+    .section{padding:55px 6%;max-width:900px;margin:auto;}
+    h1{font-size:2rem;margin-bottom:10px;}
+    p{color:var(--subtext);font-size:0.97rem;}
+    label{display:block;margin-top:12px;font-size:0.9rem;font-weight:600;}
+    input,textarea{width:100%;padding:10px;border-radius:var(--radius);border:1px solid #ccc;margin-top:5px;font-family:inherit;}
+    textarea{min-height:120px;}
+    .btn{margin-top:15px;background:var(--accent);color:#fff;padding:11px 20px;border-radius:var(--radius);border:none;font-weight:600;cursor:pointer;}
+    .btn:hover{opacity:0.9;}
+    footer{padding:30px 6%;text-align:center;color:var(--subtext);border-top:1px solid #eee;margin-top:40px;font-size:0.9rem;}
+    .small-link{color:var(--subtext);text-decoration:none;}
+    .small-link:hover{color:var(--accent);}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">FixlyHub</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="offers.html">Offers</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="section">
+    <h1>Contact</h1>
+    <p>If you’d like to discuss partnerships, new offers, or technical collaborations, you can reach us using the form below.</p>
+
+    <form>
+      <label>Name</label>
+      <input type="text" placeholder="Your name" required>
+
+      <label>Email</label>
+      <input type="email" placeholder="you@example.com" required>
+
+      <label>Message</label>
+      <textarea placeholder="How can we help?"></textarea>
+
+      <button type="submit" class="btn">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2026 FixlyHub — All rights reserved. ·
+    <a href="terms-privacy.html" class="small-link">Terms & Privacy</a>
+  </footer>
+</body>
+</html>
