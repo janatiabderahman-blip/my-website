@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FixlyHub — Blog</title>
+  <meta name="description" content="FixlyHub Blog — Global deals, smart savings, UX, and monetization insights." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root { --bg:#fff;--text:#111;--subtext:#555;--accent:#007aff;--radius:14px; }
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+    header{padding:18px 6%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff;z-index:100;}
+    .logo{font-size:1.5rem;font-weight:700;}
+    nav a{margin-left:18px;text-decoration:none;color:var(--subtext);font-size:0.95rem;font-weight:500;}
+    nav a:hover{color:var(--accent);}
+    .section{padding:55px 6%;max-width:900px;margin:auto;}
+    h1{font-size:2rem;margin-bottom:10px;}
+    p{color:var(--subtext);font-size:0.97rem;}
+    .posts-list{margin-top:25px;}
+    .post-card{padding:20px 0;border-bottom:1px solid #eee;cursor:pointer;}
+    .post-card:last-child{border-bottom:none;}
+    .post-card img{width:100%;border-radius:12px;margin-bottom:10px;}
+    .post-title{font-size:1.15rem;font-weight:600;margin:0 0 4px;}
+    .post-meta{font-size:0.8rem;color:var(--subtext);margin-bottom:6px;}
+    .post-excerpt{font-size:0.9rem;color:var(--subtext);}
+    .badge{display:inline-block;padding:2px 8px;border-radius:999px;background:#f1f5ff;color:var(--accent);font-size:0.7rem;font-weight:600;margin-right:6px;}
+    .post-view{margin-top:30px;padding:20px;border-radius:var(--radius);border:1px solid #eee;background:#fafafa;}
+    .post-view img{width:100%;border-radius:12px;margin-bottom:20px;}
+    .back-link{display:inline-block;margin-top:15px;font-size:0.9rem;color:var(--accent);text-decoration:none;}
+    .back-link:hover{text-decoration:underline;}
+    footer{padding:30px 6%;text-align:center;color:var(--subtext);border-top:1px solid #eee;margin-top:40px;font-size:0.9rem;}
+    .small-link{color:var(--subtext);text-decoration:none;}
+    .small-link:hover{color:var(--accent);}
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">FixlyHub</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="offers.html">Offers</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="section">
+  <h1>FixlyHub Blog</h1>
+  <p>Premium insights on deals, savings, UX, and monetization — inspired by top‑earning platforms.</p>
+
+  <div id="posts-list" class="posts-list"></div>
+  <div id="post-view" class="post-view" style="display:none;"></div>
+</section>
+
+<footer>
+  © 2026 FixlyHub — All rights reserved. ·
+  <a href="terms-privacy.html" class="small-link">Terms & Privacy</a>
+</footer>
+
+<!-- Load posts data -->
+<script src="posts.js"></script>
+
+<!-- Blog logic -->
+<script>
+  const postsListEl = document.getElementById('posts-list');
+  const postViewEl = document.getElementById('post-view');
+
+  function renderPostsList() {
+    postsListEl.innerHTML = '';
+    postViewEl.style.display = 'none';
+
+    FIXLY_POSTS.forEach(post => {
+      const div = document.createElement('div');
+      div.className = 'post-card';
+      div.onclick = () => openPost(post.slug);
+
+      div.innerHTML = `
+        <img src="${post.image}" alt="${post.title}">
+        <div class="post-meta">
+          <span class="badge">${post.category}</span>
+          <span>${post.date} · ${post.readTime}</span>
+        </div>
+        <h2 class="post-title">${post.title}</h2>
+        <p class="post-excerpt">${post.excerpt}</p>
+      `;
+
+      postsListEl.appendChild(div);
+    });
+  }
+
+  function openPost(slug) {
+    const post = FIXLY_POSTS.find(p => p.slug === slug);
+    if (!post) return;
+
+    postsListEl.innerHTML = '';
+    postViewEl.style.display = 'block';
+
+    postViewEl.innerHTML = `
+      <div class="post-meta">
+        <span class="badge">${post.category}</span>
+        <span>${post.date} · ${post.readTime}</span>
+      </div>
+      <h2>${post.title}</h2>
+      ${post.content}
+      <a href="#" class="back-link" onclick="renderPostsList();return false;">← Back to all posts</a>
+    `;
+  }
+
+  // Initial render
+  renderPostsList();
+</script>
+
+</body>
+</html>
