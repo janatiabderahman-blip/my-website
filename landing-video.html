@@ -1,202 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FixlyHub — Unlock Premium Global Deals</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FixlyHub — Global Deals</title>
 
-  <!-- SEO -->
-  <meta name="description" content="FixlyHub helps you unlock premium global deals from Temu, AliExpress, and top marketplaces. Fast, clean, and built for smart savings." />
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://janatiabderahman-blip.github.io/FixlyHub/landing-video.html">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+  }
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="FixlyHub — Unlock Premium Global Deals">
-  <meta property="og:description" content="Discover curated global deals, coupons, and exclusive offers updated daily.">
-  <meta property="og:image" content="assets/img/fixlyhub-preview.png">
-  <meta property="og:type" content="website">
+  /* HERO VIDEO */
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="FixlyHub — Unlock Premium Global Deals">
-  <meta name="twitter:description" content="Discover curated global deals, coupons, and exclusive offers updated daily.">
-  <meta name="twitter:image" content="assets/img/fixlyhub-preview.png">
+  .hero video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.45);
+  }
 
-  <!-- Favicon -->
-  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  /* LOGO */
+  .logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    z-index: 3;
+    animation: fadeIn 1.5s ease;
+  }
+  .logo span { color: #ff9900; }
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  /* LANGUAGE BUTTON */
+  .lang-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.15);
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 3;
+    font-weight: bold;
+    backdrop-filter: blur(6px);
+  }
 
-  <style>
-    :root {
-      --bg: #ffffff;
-      --text: #111;
-      --subtext: #555;
-      --accent: #007aff;
-      --radius: 14px;
-    }
+  /* CONTENT */
+  .content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 6%;
+    animation: fadeUp 1.4s ease;
+  }
 
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }
+  h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+  }
 
-    /* HERO WITH VIDEO */
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 75vh;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #fff;
-    }
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    color: #ddd;
+  }
 
-    .hero video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(0.45);
-    }
+  /* CTA BUTTON */
+  .btn {
+    display: inline-block;
+    padding: 14px 26px;
+    background: #ff9900;
+    color: #000;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    animation: zoomIn 1.2s ease;
+  }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-      padding: 0 6%;
-    }
+  /* SKIP BUTTON */
+  .skip-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.2);
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 3;
+    font-weight: bold;
+    backdrop-filter: blur(6px);
+  }
 
-    .hero-content h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 15px;
-    }
+  /* AD BANNER */
+  .ad-banner {
+    width: 100%;
+    background: #111;
+    padding: 18px;
+    text-align: center;
+    font-size: 1rem;
+    color: #ffcc00;
+    font-weight: bold;
+    border-top: 2px solid #ff9900;
+  }
 
-    .hero-content p {
-      font-size: 1.2rem;
-      margin-bottom: 25px;
-      color: #eee;
-    }
+  /* ANIMATIONS */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
-    .btn-primary {
-      padding: 14px 28px;
-      background: var(--accent);
-      color: #fff;
-      border-radius: var(--radius);
-      text-decoration: none;
-      font-size: 1.1rem;
-      font-weight: 600;
-      display: inline-block;
-    }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
-    /* FEATURES */
-    .features {
-      padding: 60px 6%;
-      max-width: 900px;
-      margin: auto;
-    }
+  @keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
 
-    .feature-box {
-      border: 1px solid #eee;
-      padding: 25px;
-      border-radius: var(--radius);
-      margin-bottom: 20px;
-      background: #fff;
-    }
-
-    .feature-box h3 {
-      margin-bottom: 10px;
-      font-size: 1.3rem;
-    }
-
-    /* CTA */
-    .cta {
-      padding: 60px 6%;
-      text-align: center;
-      background: #f9fbff;
-      border-radius: var(--radius);
-      max-width: 900px;
-      margin: 40px auto;
-    }
-
-    .cta h2 {
-      font-size: 2rem;
-      margin-bottom: 15px;
-    }
-
-    /* FOOTER */
-    footer {
-      padding: 30px 6%;
-      text-align: center;
-      color: var(--subtext);
-      font-size: 0.9rem;
-      margin-top: 40px;
-    }
-
-    @media (max-width: 600px) {
-      .hero-content h1 { font-size: 2.2rem; }
-      .hero-content p { font-size: 1rem; }
-      .hero { height: 65vh; }
-    }
-  </style>
+  @media (max-width: 600px) {
+    h1 { font-size: 2rem; }
+    p { font-size: 1rem; }
+  }
+</style>
 </head>
 
 <body>
 
-<!-- HERO WITH COMMERCIAL VIDEO -->
+<!-- LOGO -->
+<div class="logo">Fixly<span>Hub</span></div>
+
+<!-- LANGUAGE SWITCH -->
+<div class="lang-btn" id="langBtn">🌍 EN</div>
+
+<!-- SKIP INTRO -->
+<div class="skip-btn" onclick="window.location.href='offers.html'">Skip</div>
+
+<!-- HERO VIDEO -->
 <section class="hero">
   <video autoplay muted loop playsinline>
     <source src="https://cdn.coverr.co/videos/coverr-shopping-online-1080p.mp4" type="video/mp4">
   </video>
 
-  <div class="hero-content">
-    <h1>Unlock Premium Global Deals — Instantly</h1>
-    <p>FixlyHub curates the smartest deals from Temu, AliExpress, and top marketplaces. No noise. No spam. Just real savings.</p>
-    <a href="offers.html" class="btn-primary">🔥 Explore Today’s Best Offers</a>
+  <div class="content">
+    <h1 id="title">Loading…</h1>
+    <p id="subtitle">Loading…</p>
+    <a id="cta" href="offers.html" class="btn">Loading…</a>
   </div>
 </section>
 
-<!-- FEATURES -->
-<section class="features">
-  <div class="feature-box">
-    <h3>🌍 Global Deals, Curated Daily</h3>
-    <p>We scan top marketplaces and bring you only verified, high‑value offers.</p>
-  </div>
+<!-- ADVERTISEMENT -->
+<div class="ad-banner" id="adText">
+  🔥 إعلان: أفضل عروض أمازون — خصومات تصل إلى 70%
+</div>
 
-  <div class="feature-box">
-    <h3>⚡ Fast & Clean Experience</h3>
-    <p>No ads overload, no distractions — just the deals you need.</p>
-  </div>
+<script>
+  /* LANGUAGE DETECTION */
+  let lang = navigator.language.startsWith('ar') ? 'ar'
+           : navigator.language.startsWith('fr') ? 'fr'
+           : 'en';
 
-  <div class="feature-box">
-    <h3>🎁 Exclusive Coupons</h3>
-    <p>Access hidden coupons and bonus offers not available publicly.</p>
-  </div>
+  const translations = {
+    en: {
+      title: "Unlock Premium Global Deals — Instantly",
+      subtitle: "FixlyHub curates the smartest deals from Temu, AliExpress, and top marketplaces.",
+      cta: "🔥 Explore Today’s Best Offers",
+      skip: "Skip",
+      ad: "🔥 Ad: Best Amazon Deals — Up to 70% OFF",
+      langBtn: "🌍 EN"
+    },
+    ar: {
+      title: "اكتشف أفضل العروض العالمية — فورًا",
+      subtitle: "FixlyHub يجلب لك أذكى العروض من Temu وAliExpress وأكبر المتاجر العالمية.",
+      cta: "🔥 استكشف أفضل عروض اليوم",
+      skip: "تخطي",
+      ad: "🔥 إعلان: أفضل عروض أمازون — خصومات تصل إلى 70%",
+      langBtn: "🌍 AR"
+    },
+    fr: {
+      title: "Découvrez les meilleures offres mondiales — Instantanément",
+      subtitle: "FixlyHub sélectionne pour vous les meilleures offres de Temu, AliExpress et plus.",
+      cta: "🔥 Voir les meilleures offres",
+      skip: "Passer",
+      ad: "🔥 Pub: Meilleures offres Amazon — Jusqu’à -70%",
+      langBtn: "🌍 FR"
+    }
+  };
 
-  <div class="feature-box">
-    <h3>🔐 Smart Monetization</h3>
-    <p>FixlyHub uses affiliate links and CPA offers without hurting user experience.</p>
-  </div>
-</section>
+  function applyLang() {
+    const t = translations[lang];
+    document.getElementById("title").textContent = t.title;
+    document.getElementById("subtitle").textContent = t.subtitle;
+    document.getElementById("cta").textContent = t.cta;
+    document.querySelector(".skip-btn").textContent = t.skip;
+    document.getElementById("adText").textContent = t.ad;
+    document.getElementById("langBtn").textContent = t.langBtn;
 
-<!-- CTA -->
-<section class="cta">
-  <h2>Ready to Save More?</h2>
-  <p>Start exploring the best deals from Temu, AliExpress, and more.</p>
-  <a href="offers.html" class="btn-primary">Start Saving Now</a>
-</section>
+    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+  }
 
-<footer>
-  © 2026 FixlyHub — Global Deals & Smart Savings
-</footer>
+  applyLang();
+
+  /* MANUAL LANGUAGE SWITCH */
+  document.getElementById("langBtn").onclick = () => {
+    lang = lang === "en" ? "ar" : lang === "ar" ? "fr" : "en";
+    applyLang();
+  };
+</script>
 
 </body>
 </html>
