@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FixlyHub · Amazon Global Deals</title>
+
+  <meta name="description" content="Curated Amazon deals with global-ready design, multi-language support, ratings, coupons, and smart comparison.">
+  <meta name="robots" content="index, follow">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --card-bg: #f9f9f9;
+      --text: #111111;
+      --muted: #666666;
+      --primary: #007aff;
+      --border: #e5e5e5;
+    }
+
+    [data-theme="dark"] {
+      --bg: #050509;
+      --card-bg: #111119;
+      --text: #f5f5f5;
+      --muted: #aaaaaa;
+      --primary: #3b82f6;
+      --border: #222233;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 6%;
+      font-size: 0.85rem;
+      background: #111;
+      color: #fff;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .top-bar button {
+      background: #fff;
+      color: #111;
+      border-radius: 999px;
+      border: none;
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    header {
+      padding: 18px 6% 10px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.25rem;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+    }
+
+    .nav-links a.active {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .right-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .theme-toggle,
+    .lang-toggle {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      padding: 6px 10px;
+      font-size: 0.8rem;
+      background: transparent;
+      cursor: pointer;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero {
+      padding: 22px 6% 10px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .hero-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .hero-sub {
+      font-size: 0.96rem;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .badge {
+      font-size: 0.78rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 18px;
+      font-size: 0.85rem;
+    }
+
+    .filters select {
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 0.82rem;
+    }
+
+    .products-section {
+      padding: 0 6% 30px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 14px 0;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .product-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 12px;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-tag {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #f97316;
+      color: #fff;
+      font-size: 0.7rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+    }
+
+    .product-img {
+      width: 100%;
+      border-radius: 12px;
+      background: #ddd;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+
+    .product-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .product-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .stars {
+      color: #facc15;
+      font-size: 0.8rem;
+    }
+
+    .price {
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .price span {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: line-through;
+      margin-inline-start: 4px;
+    }
+
+    .coupon-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .coupon-code {
+      font-size: 0.78rem;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px dashed var(--border);
+      color: var(--primary);
+      background: rgba(59,130,246,0.06);
+      white-space: nowrap;
+    }
+
+    .copy-btn {
+      font-size: 0.75rem;
+      border-radius: 999px;
+      border: none;
+      padding: 4px 10px;
+      cursor: pointer;
+      background: var(--primary);
+      color: #fff;
+      white-space: nowrap;
+    }
+
+    .product-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      flex: 1;
+      padding: 9px 10px;
+      border-radius: 999px;
+      border: none;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn-ghost {
+      padding: 9px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.8rem;
+      cursor: pointer;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    .compare-section {
+      padding: 20px 6% 40px;
+      max-width: 1100px;
+      margin: auto;
+      border-top: 1px solid var(--border);
+      margin-top: 10px;
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      margin-top: 10px;
+    }
+
+    .compare-table th,
+    .compare-table td {
+      border: 1px solid var(--border);
+      padding: 8px;
+      text-align: center;
+    }
+
+    .compare-table th {
+      background: var(--card-bg);
+      font-weight: 600;
+    }
+
+    .compare-highlight {
+      background: rgba(59,130,246,0.08);
+    }
+
+    footer {
+      padding: 18px 6% 26px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 640px) {
+      .hero-title {
+        font-size: 1.5rem;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body data-theme="light">
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <span data-i18n="topBarText">🔥 Curated Amazon deals powered by FixlyHub affiliate links.</span>
+    <button id="scrollOffers" data-i18n="topBarButton">View deals</button>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">Fixly<span>Hub</span> · Amazon</div>
+    <nav class="nav-links">
+      <a href="index.html" data-i18n="navHome">Home</a>
+      <a href="offers.html" data-i18n="navOffers">Deals</a>
+      <a href="amazon.html" class="active" data-i18n="navAmazon">Amazon</a>
+      <a href="blog.html" data-i18n="navBlog">Blog</a>
+    </nav>
+    <div class="right-controls">
+      <button class="lang-toggle" id="langToggle">🌍 EN</button>
+      <button class="theme-toggle" id="themeToggle">🌙 Dark</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-title" data-i18n="heroTitle">
+      Amazon Saudi & Global Deals, Curated for You
+    </div>
+    <div class="hero-sub" data-i18n="heroSub">
+      High‑rated products, real value, clean design, and affiliate links that support FixlyHub at no extra cost to you.
+    </div>
+
+    <div class="hero-badges">
+      <div class="badge" data-i18n="badge1">✅ Trusted affiliate links</div>
+      <div class="badge" data-i18n="badge2">⭐ Only high‑rating products</div>
+      <div class="badge" data-i18n="badge3">📦 Saudi & global availability</div>
+      <div class="badge" data-i18n="badge4">💰 Best value for money</div>
+    </div>
+
+    <div class="filters">
+      <span data-i18n="filterCategoryLabel">Filter by category:</span>
+      <select id="filterCategory">
+        <option value="all" data-i18n="filterAll">All</option>
+        <option value="tech" data-i18n="filterTech">Tech</option>
+        <option value="home" data-i18n="filterHome">Home</option>
+        <option value="accessories" data-i18n="filterAccessories">Accessories</option>
+      </select>
+
+      <span data-i18n="filterRatingLabel">Filter by rating:</span>
+      <select id="filterRating">
+        <option value="all" data-i18n="filterRatingAll">All ratings</option>
+        <option value="4.5">4.5+ ⭐</option>
+        <option value="4.0">4.0+ ⭐</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products-section" id="offersSection">
+    <div class="section-title" data-i18n="sectionTitle">
+      Featured Amazon Saudi & Global Picks
+    </div>
+
+    <div class="product-grid" id="productGrid">
+      <!-- PRODUCT CARDS WILL BE INJECTED BY JS -->
+    </div>
+  </section>
+
+  <!-- COMPARE -->
+  <section class="compare-section">
+    <div class="section-title" data-i18n="compareTitle">
+      Quick comparison between selected products
+    </div>
+    <p style="font-size:0.85rem; color:var(--muted); margin:0 0 8px;" data-i18n="compareHint">
+      Select up to 3 products using the “+ Compare” button to help you decide.
+    </p>
+
+    <table class="compare-table" id="compareTable">
+      <thead>
+        <tr>
+          <th data-i18n="compareColProduct">Product</th>
+          <th data-i18n="compareColPrice">Price</th>
+          <th data-i18n="compareColRating">Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- FILLED BY JS -->
+      </tbody>
+    </table>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span data-i18n="footerLine1">
+      © 2026 FixlyHub – Amazon Deals & Global Savings
+    </span>
+    <br>
+    <span data-i18n="footerLine2">
+      Some links are affiliate links that support FixlyHub at no extra cost to you.
+    </span>
+  </footer>
+
+  <script>
+    // -----------------------------
+    // TRANSLATIONS (EN / AR / FR)
+    // -----------------------------
+    const translations = {
+      en: {
+        topBarText: "🔥 Curated Amazon deals powered by FixlyHub affiliate links.",
+        topBarButton: "View deals",
+        navHome: "Home",
+        navOffers: "Deals",
+        navAmazon: "Amazon",
+        navBlog: "Blog",
+        heroTitle: "Amazon Saudi & Global Deals, Curated for You",
+        heroSub: "High‑rated products, real value, clean design, and affiliate links that support FixlyHub at no extra cost to you.",
+        badge1: "✅ Trusted affiliate links",
+        badge2: "⭐ Only high‑rating products",
+        badge3: "📦 Saudi & global availability",
+        badge4: "💰 Best value for money",
+        filterCategoryLabel: "Filter by category:",
+        filterAll: "All",
+        filterTech: "Tech",
+        filterHome: "Home",
+        filterAccessories: "Accessories",
+        filterRatingLabel: "Filter by rating:",
+        filterRatingAll: "All ratings",
+        sectionTitle: "Featured Amazon Saudi & Global Picks",
+        compareTitle: "Quick comparison between selected products",
+        compareHint: "Select up to 3 products using the “+ Compare” button to help you decide.",
+        compareColProduct: "Product",
+        compareColPrice: "Price",
+        compareColRating: "Rating",
+        footerLine1: "© 2026 FixlyHub – Amazon Deals & Global Savings",
+        footerLine2: "Some links are affiliate links that support FixlyHub at no extra cost to you.",
+        btnBuy: "Buy on Amazon",
+        btnCompare: "+ Compare",
+        btnCopied: "Copied ✔",
+        btnCopy: "Copy coupon",
+        topBarScroll: "View deals",
+        langLabel: "EN",
+        themeDark: "🌙 Dark",
+        themeLight: "☀️ Light"
+      },
+      ar: {
+        topBarText: "🔥 أفضل عروض أمازون المختارة بروابط خاصة عبر FixlyHub.",
+        topBarButton: "عرض العروض",
+        navHome: "الرئيسية",
+        navOffers: "العروض",
+        navAmazon: "أمازون",
+        navBlog: "المدونة",
+        heroTitle: "أفضل عروض ومنتجات أمازون السعودية والعالمية",
+        heroSub: "منتجات بتقييمات عالية، قيمة حقيقية، تصميم نظيف، وروابط خاصة تدعم FixlyHub دون أي تكلفة إضافية عليك.",
+        badge1: "✅ روابط خاصة موثوقة",
+        badge2: "⭐ منتجات بتقييمات عالية فقط",
+        badge3: "📦 متوفرة في السعودية وعالميًا",
+        badge4: "💰 أفضل قيمة مقابل السعر",
+        filterCategoryLabel: "تصفية حسب الفئة:",
+        filterAll: "كل الفئات",
+        filterTech: "تقنية",
+        filterHome: "منزل",
+        filterAccessories: "إكسسوارات",
+        filterRatingLabel: "تصفية حسب التقييم:",
+        filterRatingAll: "كل التقييمات",
+        sectionTitle: "منتجات أمازون المختارة – السعودية والعالم",
+        compareTitle: "مقارنة سريعة بين المنتجات المختارة",
+        compareHint: "اختر حتى 3 منتجات من زر “+ مقارنة” لمساعدتك في اتخاذ قرار الشراء.",
+        compareColProduct: "المنتج",
+        compareColPrice: "السعر",
+        compareColRating: "التقييم",
+        footerLine1: "© 2026 FixlyHub – عروض أمازون وتوفير عالمي",
+        footerLine2: "بعض الروابط قد تكون روابط خاصة لدعم FixlyHub دون أي تكلفة إضافية عليك.",
+        btnBuy: "شراء من أمازون",
+        btnCompare: "+ مقارنة",
+        btnCopied: "تم النسخ ✔",
+        btnCopy: "نسخ الكوبون",
+        topBarScroll: "عرض العروض",
+        langLabel: "AR",
+        themeDark: "🌙 وضع داكن",
+        themeLight: "☀️ وضع فاتح"
+      },
+      fr: {
+        topBarText: "🔥 Offres Amazon sélectionnées avec des liens affiliés FixlyHub.",
+        topBarButton: "Voir les offres",
+        navHome: "Accueil",
+        navOffers: "Offres",
+        navAmazon: "Amazon",
+        navBlog: "Blog",
+        heroTitle: "Offres Amazon Arabie Saoudite & Monde, sélectionnées pour vous",
+        heroSub: "Produits bien notés, vraie valeur, design propre et liens affiliés qui soutiennent FixlyHub sans coût supplémentaire.",
+        badge1: "✅ Liens affiliés fiables",
+        badge2: "⭐ Produits bien notés uniquement",
+        badge3: "📦 Disponibles en Arabie Saoudite & globalement",
+        badge4: "💰 Meilleur rapport qualité‑prix",
+        filterCategoryLabel: "Filtrer par catégorie :",
+        filterAll: "Toutes",
+        filterTech: "Tech",
+        filterHome: "Maison",
+        filterAccessories: "Accessoires",
+        filterRatingLabel: "Filtrer par note :",
+        filterRatingAll: "Toutes les notes",
+        sectionTitle: "Sélection Amazon Arabie Saoudite & Monde",
+        compareTitle: "Comparaison rapide des produits sélectionnés",
+        compareHint: "Sélectionnez jusqu’à 3 produits avec le bouton “+ Comparer” pour vous aider à choisir.",
+        compareColProduct: "Produit",
+        compareColPrice: "Prix",
+        compareColRating: "Note",
+        footerLine1: "© 2026 FixlyHub – Offres Amazon & Économies globales",
+        footerLine2: "Certains liens sont affiliés et soutiennent FixlyHub sans coût supplémentaire pour vous.",
+        btnBuy: "Acheter sur Amazon",
+        btnCompare: "+ Comparer",
+        btnCopied: "Copié ✔",
+        btnCopy: "Copier le coupon",
+        topBarScroll: "Voir les offres",
+        langLabel: "FR",
+        themeDark: "🌙 Sombre",
+        themeLight: "☀️ Clair"
+      }
+    };
+
+    let currentLang = 'en';
+
+    function detectLanguage() {
+      const lang = navigator.language || navigator.userLanguage || 'en';
+      if (lang.startsWith('ar')) return 'ar';
+      if (lang.startsWith('fr')) return 'fr';
+      return 'en';
+    }
+
+    function applyTranslations() {
+      const dict = translations[currentLang] || translations.en;
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) el.textContent = dict[key];
+      });
+
+      // Update buttons text
+      document.getElementById('langToggle').textContent = '🌍 ' + dict.langLabel;
+      const themeToggle = document.getElementById('themeToggle');
+      const isLight = document.body.getAttribute('data-theme') === 'light';
+      themeToggle.textContent = isLight ? dict.themeDark : dict.themeLight;
+
+      // Update dynamic buttons (buy / compare / copy)
+      document.querySelectorAll('.btn-primary[data-role="buy"]').forEach(btn => {
+        btn.textContent = dict.btnBuy;
+      });
+      document.querySelectorAll('.btn-ghost[data-role="compare"]').forEach(btn => {
+        btn.textContent = dict.btnCompare;
+      });
+      document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.textContent = dict.btnCopy;
+      });
+      document.getElementById('scrollOffers').textContent = dict.topBarScroll;
+    }
+
+    // -----------------------------
+    // PRODUCT DATA (GLOBAL)
+    // -----------------------------
+    const products = [
+      {
+        id: 1,
+        category: 'tech',
+        rating: 4.7,
+        tag: 'bestseller',
+        tagColor: '#f97316',
+        // سماعة بلوتوث – رابطك الطويل
+        link: 'https://www.amazon.sa?&linkCode=ll2&tag=abdo20260ea-21&linkId=765d8e5abfa7f5cc5a0c958bcc10987c&ref=aslisstl',
+        price: '129 ر.س',
+        oldPrice: '199 ر.س',
+        coupon: 'FIXLY10',
+        img: 'https://images.pexels.com/photos/3394664/pexels-photo-3394664.jpeg?auto=compress&cs=tinysrgb&w=800',
+        title: {
+          ar: 'سماعة بلوتوث لاسلكية بعزل ضوضاء وجودة صوت عالية',
+          en: 'Wireless Bluetooth earbuds with noise cancelling and high‑fidelity sound',
+          fr: 'Écouteurs Bluetooth sans fil avec réduction de bruit et son haute fidélité'
+        }
+      },
+      {
+        id: 2,
+        category: 'home',
+        rating: 4.5,
+        tag: 'value',
+        tagColor: '#22c55e',
+        link: 'https://amzn.to/45JgzrO',
+        price: '59 ر.س',
+        oldPrice: '89 ر.س',
+        coupon: 'FIXLY5',
+        img: 'https://images.pexels.com/photos/37347/office-freelancer-computer-business-37347.jpeg?auto=compress&cs=tinysrgb&w=800',
+        title: {
+          ar: 'منظم كابلات وأدوات مكتب أنيق للحفاظ على ترتيب مكتبك',
+          en: 'Minimal desk cable organizer to keep your workspace clean',
+          fr: 'Organisateur de câbles de bureau minimaliste pour un espace de travail propre'
+        }
+      },
+      {
+        id: 3,
+        category: 'tech',
+        rating: 4.3,
+        tag: null,
+        tagColor: '#f97316',
+        link: 'https://amzn.to/4k9f5wS',
+        price: '79 ر.س',
+        oldPrice: '109 ر.س',
+        coupon: 'FIXLY7',
+        img: 'https://images.pexels.com/photos/1432675/pexels-photo-1432675.jpeg?auto=compress&cs=tinysrgb&w=800',
+        title: {
+          ar: 'شاحن جداري سريع بمنفذ USB‑C يدعم الشحن السريع للهواتف الحديثة',
+          en: 'Fast wall charger with USB‑C port for modern smartphones',
+          fr: 'Chargeur mural rapide avec port USB‑C pour smartphones modernes'
+        }
+      },
+      {
+        id: 4,
+        category: 'accessories',
+        rating: 4.6,
+        tag: null,
+        tagColor: '#f97316',
+        link: 'https://amzn.to/3ZQuxo9',
+        price: '99 ر.س',
+        oldPrice: '139 ر.س',
+        coupon: 'FIXLY15',
+        img: 'https://images.pexels.com/photos/374631/pexels-photo-374631.jpeg?auto=compress&cs=tinysrgb&w=800',
+        title: {
+          ar: 'حافظة لابتوب مقاومة للصدمات مع جيوب إضافية للإكسسوارات',
+          en: 'Shock‑resistant laptop sleeve with extra pockets for accessories',
+          fr: 'Housse d’ordinateur résistante aux chocs avec poches supplémentaires'
+        }
+      },
+      {
+        id: 5,
+        category: 'home',
+        rating: 4.8,
+        tag: 'featured',
+        tagColor: '#e11d48',
+        link: 'https://amzn.to/4ae1vDZ',
+        price: '149 ر.س',
+        oldPrice: '199 ر.س',
+        coupon: 'FIXLY12',
+        img: 'https://images.pexels.com/photos/8132693/pexels-photo-8132693.jpeg?auto=compress&cs=tinysrgb&w=800',
+        title: {
+          ar: 'مصباح مكتبي LED بإضاءة قابلة للتعديل ووضع حماية للعين',
+          en: 'Adjustable LED desk lamp with eye‑care mode',
+          fr: 'Lampe de bureau LED réglable avec mode protection des yeux'
+        }
+      },
+      // منتجات إضافية لانتشار عالمي
+      {
+        id: 6,
+        category: 'tech',
+        rating: 4.9,
+        tag: 'global',
+        tagColor: '#6366f1',
+        link: 'https://amzn.to/3example1',
+        price: '$39',
+        oldPrice: '$59',
+        coupon: 'GLOBAL10',
+        img: 'https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=800',
+        title: {
+          ar: 'ماوس لاسلكي احترافي للعمل والـ Gaming بدقة عالية',
+          en: 'Pro wireless mouse for work & gaming with high precision',
+          fr: 'Souris sans fil pro pour travail & gaming avec haute précision'
+        }
+      },
+      {
+        id: 7,
+        category: 'accessories',
+        rating: 4.4,
+        tag: null,
+        tagColor: '#f97316',
+        link: 'https://amzn.to/3example2',
+        price: '$19',
+        oldPrice: '$29',
+        coupon: 'FIXLYGLOBAL',
+        img: 'https://images.pexels.com/photos/845434/pexels-photo-845434.jpeg?auto=compress&cs=tinysrgb&w=800',
+        title: {
+          ar: 'حامل جوال مكتبي معدني ثابت للبث والعمل',
+          en: 'Metal phone stand for desk, perfect for calls & streaming',
+          fr: 'Support de téléphone de bureau en métal, idéal pour appels & streaming'
+        }
+      },
+      {
+        id: 8,
+        category: 'home',
+        rating: 4.2,
+        tag: null,
+        tagColor: '#f97316',
+        link: 'https://amzn.to/3example3',
+        price: '$25',
+        oldPrice: '$35',
+        coupon: 'HOME5',
+        img: 'https://images.pexels.com/photos/1125134/pexels-photo-1125134.jpeg?auto=compress&cs=tinysrgb&w=800',
+        title: {
+          ar: 'مجموعة تنظيم منزلية متعددة الاستخدام لترتيب الأدراج والخزائن',
+          en: 'Multi‑use home organizer set for drawers and cabinets',
+          fr: 'Kit d’organisateurs multi‑usage pour tiroirs et placards'
+        }
+      }
+    ];
+
+    // -----------------------------
+    // RENDER PRODUCTS
+    // -----------------------------
+    const productGrid = document.getElementById('productGrid');
+
+    function renderProducts() {
+      productGrid.innerHTML = '';
+      const dict = translations[currentLang] || translations.en;
+
+      products.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.dataset.category = p.category;
+        card.dataset.rating = p.rating;
+
+        const titleText = p.title[currentLang] || p.title.en;
+
+        card.innerHTML = `
+          ${p.tag ? `<div class="product-tag" style="background:${p.tagColor};">${p.tag === 'bestseller' ? '🔥' : p.tag === 'value' ? '💎' : '⭐'}</div>` : ''}
+          <img class="product-img" src="${p.img}" alt="">
+          <div class="product-title">${titleText}</div>
+          <div class="product-meta">
+            <div class="stars">⭐ ${p.rating.toFixed(1)}</div>
+            <div class="price">${p.price} ${p.oldPrice ? `<span>${p.oldPrice}</span>` : ''}</div>
+          </div>
+          <div class="coupon-row">
+            <div class="coupon-code" data-code="${p.coupon}">${currentLang === 'ar' ? 'كوبون:' : currentLang === 'fr' ? 'Coupon :' : 'Coupon:'} ${p.coupon}</div>
+            <button class="copy-btn">${dict.btnCopy}</button>
+          </div>
+          <div class="product-actions">
+            <a class="btn-primary" data-role="buy" href="${p.link}" target="_blank">${dict.btnBuy}</a>
+            <button class="btn-ghost add-compare" data-role="compare" data-name="${titleText}" data-price="${p.price}" data-rating="${p.rating}">
+              ${dict.btnCompare}
+            </button>
+          </div>
+        `;
+        productGrid.appendChild(card);
+      });
+
+      attachCopyHandlers();
+      attachCompareHandlers();
+      applyFilters();
+    }
+
+    // -----------------------------
+    // THEME TOGGLE
+    // -----------------------------
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      const current = document.body.getAttribute('data-theme');
+      const next = current === 'light' ? 'dark' : 'light';
+      document.body.setAttribute('data-theme', next);
+      const dict = translations[currentLang] || translations.en;
+      themeToggle.textContent = next === 'light' ? dict.themeDark : dict.themeLight;
+    });
+
+    // -----------------------------
+    // SCROLL TO OFFERS
+    // -----------------------------
+    document.getElementById('scrollOffers').addEventListener('click', () => {
+      document.getElementById('offersSection').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // -----------------------------
+    // COPY COUPON
+    // -----------------------------
+    function attachCopyHandlers() {
+      const dict = translations[currentLang] || translations.en;
+      document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.onclick = () => {
+          const code = btn.parentElement.querySelector('.coupon-code').dataset.code;
+          navigator.clipboard.writeText(code).then(() => {
+            const old = dict.btnCopy;
+            btn.textContent = dict.btnCopied;
+            setTimeout(() => btn.textContent = old, 1200);
+          });
+        };
+      });
+    }
+
+    // -----------------------------
+    // FILTERS
+    // -----------------------------
+    const filterCategory = document.getElementById('filterCategory');
+    const filterRating = document.getElementById('filterRating');
+
+    function applyFilters() {
+      const cat = filterCategory.value;
+      const rating = filterRating.value;
+      document.querySelectorAll('.product-card').forEach(card => {
+        const cardCat = card.dataset.category;
+        const cardRating = parseFloat(card.dataset.rating || '0');
+        let show = true;
+        if (cat !== 'all' && cardCat !== cat) show = false;
+        if (rating !== 'all' && cardRating < parseFloat(rating)) show = false;
+        card.style.display = show ? 'flex' : 'none';
+      });
+    }
+
+    filterCategory.addEventListener('change', applyFilters);
+    filterRating.addEventListener('change', applyFilters);
+
+    // -----------------------------
+    // COMPARE
+    // -----------------------------
+    const compareTableBody = document.querySelector('#compareTable tbody');
+    let compareItems = [];
+
+    function renderCompare() {
+      compareTableBody.innerHTML = '';
+      compareItems.forEach((item, index) => {
+        const tr = document.createElement('tr');
+        if (index === 0) tr.classList.add('compare-highlight');
+        tr.innerHTML = `
+          <td>${item.name}</td>
+          <td>${item.price}</td>
+          <td>${item.rating} ⭐</td>
+        `;
+        compareTableBody.appendChild(tr);
+      });
+    }
+
+    function attachCompareHandlers() {
+      const dict = translations[currentLang] || translations.en;
+      document.querySelectorAll('.add-compare').forEach(btn => {
+        btn.onclick = () => {
+          const name = btn.dataset.name;
+          const price = btn.dataset.price;
+          const rating = btn.dataset.rating;
+          if (compareItems.find(i => i.name === name)) return;
+          if (compareItems.length >= 3) compareItems.shift();
+          compareItems.push({ name, price, rating });
+          renderCompare();
+        };
+        btn.textContent = dict.btnCompare;
+      });
+    }
+
+    // -----------------------------
+    // LANGUAGE TOGGLE
+    // -----------------------------
+    const langToggle = document.getElementById('langToggle');
+    langToggle.addEventListener('click', () => {
+      if (currentLang === 'en') currentLang = 'ar';
+      else if (currentLang === 'ar') currentLang = 'fr';
+      else currentLang = 'en';
+      renderProducts();
+      applyTranslations();
+    });
+
+    // -----------------------------
+    // INIT
+    // -----------------------------
+    (function init() {
+      currentLang = detectLanguage();
+      renderProducts();
+      applyTranslations();
+    })();
+  </script>
+</body>
+  </html>
