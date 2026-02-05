@@ -3,63 +3,84 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title id="dynamic-title">FixlyHub — Smart Shopping Guide 2026</title>
+  <title id="dynamic-title">Smart Shopping Guide 2026 | FixlyHub</title>
 
-  <meta name="description" content="Master the art of global shopping with FixlyHub. Verified deals from Amazon, Temu, and AliExpress." id="dynamic-description">
+  <meta name="description" content="Master the art of global shopping. Learn how FixlyHub verifies deals from Amazon, Temu, and AliExpress for premium quality." id="dynamic-description">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
-    :root { --accent: #007aff; --text: #111; --bg: #ffffff; }
-    body { margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; }
+    :root { --primary: #007aff; --dark: #111; --gray: #666; --light-bg: #f8f9fa; }
+    body { margin: 0; font-family: 'Inter', sans-serif; background: #fff; color: var(--dark); line-height: 1.8; }
     
-    /* التصميم الجديد المتناسق مع الهوية العالمية */
-    .container { max-width: 850px; margin: 0 auto; padding: 40px 20px; }
-    .hero-img { width: 100%; height: 420px; object-fit: cover; border-radius: 24px; margin-bottom: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-    h1 { font-size: 3rem; font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 20px; }
-    .highlight-box { background: #f4f7ff; border-left: 6px solid var(--accent); padding: 30px; border-radius: 12px; margin: 35px 0; }
-    .cta-button { display: inline-block; background: var(--accent); color: #fff; padding: 18px 35px; border-radius: 12px; text-decoration: none; font-weight: 700; transition: 0.3s; margin-top: 25px; }
-    .cta-button:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,122,255,0.3); }
+    /* Header الموحد لربط الموقع */
+    header { display: flex; justify-content: space-between; align-items: center; padding: 18px 6%; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 1000; }
+    .logo { font-size: 1.5rem; font-weight: 800; text-decoration: none; color: var(--dark); }
+    .logo span { color: var(--primary); }
+    nav a { margin-left: 20px; text-decoration: none; color: var(--gray); font-weight: 500; font-size: 0.95rem; }
+    nav a:hover { color: var(--primary); }
+
+    /* محتوى المقال */
+    .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+    .hero-container { width: 100%; border-radius: 24px; overflow: hidden; margin-bottom: 35px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+    .hero-container img { width: 100%; height: auto; display: block; }
+    
+    h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 25px; color: var(--dark); }
+    p { font-size: 1.15rem; color: #444; margin-bottom: 25px; }
+    
+    .expert-box { background: var(--light-bg); border-left: 6px solid var(--primary); padding: 30px; border-radius: 16px; margin: 40px 0; }
+    .expert-box strong { display: block; margin-bottom: 10px; font-size: 1.2rem; color: var(--primary); }
+    
+    .cta-button { display: inline-block; background: var(--primary); color: #fff; padding: 18px 40px; border-radius: 14px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: 0.3s; margin-top: 20px; }
+    .cta-button:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(0,122,255,0.3); }
+
+    footer { text-align: center; padding: 60px 20px; border-top: 1px solid #eee; margin-top: 60px; color: var(--gray); font-size: 0.9rem; }
   </style>
 </head>
 <body>
 
-  <header style="display: flex; justify-content: space-between; align-items: center; padding: 18px 6%; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 100;">
-    <div style="font-size: 1.5rem; font-weight: 800;">Fixly<span style="color:var(--accent)">Hub</span></div>
+  <header>
+    <a href="index.html" class="logo">Fixly<span>Hub</span></a>
     <nav>
-      <a href="index.html" style="margin-left:20px; text-decoration:none; color:#555; font-weight:500;">Home</a>
-      <a href="offers.html" style="margin-left:20px; text-decoration:none; color:#555; font-weight:500;">Deals</a>
-      <a href="blog.html" style="margin-left:20px; text-decoration:none; color:#555; font-weight:500;">Blog</a>
+      <a href="index.html">Home</a>
+      <a href="offers.html">Deals</a>
+      <a href="amazon.html">Amazon</a>
+      <a href="blog.html">Blog</a>
     </nav>
   </header>
 
   <div class="container">
-    <img src="assets/img/hero-bg.jpg" class="hero-img" alt="Global Smart Shopping Guide">
-
-    <h1>The Smart Shopper’s Manifesto: Mastering Global Deals in 2026</h1>
-    <p style="font-size: 1.2rem; color: #666;">Stop overpaying. Learn how the FixlyHub verification system finds premium products at wholesale prices on Amazon, Temu, and AliExpress.</p>
-
-    <div class="highlight-box">
-      <strong>Why this matters:</strong> Every day, thousands of shoppers buy low-quality items. Our mission is to filter the noise and bring you only <strong>verified value</strong>.
+    <div class="hero-container">
+      <img src="assets/img/hero-bg.jpg" alt="Smart Global Shopping Guide 2026">
     </div>
 
-    <h2>How to Identify "Hidden Gems"</h2>
-    <p>Success in global shopping isn't about finding the lowest price—it's about the <strong>Price-to-Quality ratio</strong>. We use data-driven analysis to ensure every deal in our hub is worth your money.</p>
+    <h1>The Smart Shopper’s Manifesto: Mastering Global Deals in 2026</h1>
+    
+    <p>In today's digital age, finding a product is easy. Finding <strong>real value</strong> is the hard part. At FixlyHub, we spent months analyzing marketplaces like Amazon, Temu, and AliExpress to build a verification system that works for you.</p>
 
-    <a href="offers.html" class="cta-button">Explore Today's Verified Deals →</a>
+    <div class="expert-box">
+      <strong>💡 The Fixly Verification Rule</strong>
+      Our team filters thousands of items daily. We only approve products that meet a strict 4.7-star minimum rating, have verified photo reviews, and come from established sellers.
+    </div>
+
+    <h2>Why Quality Always Wins Over Price</h2>
+    <p>Buying a $5 item that breaks in a week is more expensive than buying a $20 verified item that lasts for years. We focus on the "Value-per-Dollar" ratio to ensure your money is spent wisely.</p>
+
+    <p>Ready to see our top picks? Every deal on our hub has been manually checked for quality and current discount status.</p>
+
+    <a href="offers.html" class="cta-button">Explore Verified Deals Now →</a>
   </div>
 
-  <footer style="text-align:center; padding: 50px; color:#888; border-top:1px solid #eee; margin-top:50px;">
-    © 2026 FixlyHub — Global Smart Savings Hub
+  <footer>
+    © 2026 FixlyHub — Global Smart Savings Hub. <br>
+    All deals are verified for quality and authenticity.
   </footer>
 
   <script>
-    // هذا الجزء يحافظ على "ذكاء" ملفك القديم في التعامل مع البيانات
     const urlParams = new URLSearchParams(window.location.search);
     const postId = urlParams.get('id');
     if(postId) {
-       console.log("Loading technical data for post:", postId);
-       // هنا يمكنك إضافة منطق جلب البيانات البرمجي الخاص بك
+       console.log("FixlyHub Engine: Loading data for ID:", postId);
     }
   </script>
 </body>
